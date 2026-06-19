@@ -7,8 +7,10 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #ccc; line-height: 1.8; }
-    header { background: #1a1a2e; padding: 20px 40px; }
+    header { background: #1a1a2e; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-size: 24px; font-weight: 800; background: linear-gradient(90deg,#e94560,#f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+    nav a { color: #888; text-decoration: none; margin-left: 24px; font-size: 13px; }
+    nav a:hover { color: #fff; }
     .container { max-width: 820px; margin: 60px auto; padding: 0 30px 80px; }
     h1 { font-size: 38px; color: #fff; margin-bottom: 10px; }
     .meta { color: #666; font-size: 14px; margin-bottom: 50px; }
@@ -19,91 +21,107 @@
     a { color: #e94560; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .highlight { background: #1a1a2e; border-radius: 12px; padding: 20px 24px; margin: 20px 0; border: 1px solid #2a2a4e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; border-bottom: 2px solid #2a2a4e; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1a1a2e; color: #aaa; vertical-align: top; }
+    tr:hover td { background: #0f0f1f; }
     footer { text-align: center; padding: 30px; color: #444; font-size: 13px; border-top: 1px solid #1a1a2e; }
   </style>
 </head>
 <body>
 <header>
   <a class="logo" href="index.html">Feetzer</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms</a>
+    <a href="delete_account.html">Delete Account</a>
+  </nav>
 </header>
 <div class="container">
   <h1>Privacy Policy</h1>
   <p class="meta">Developer: MTekaina &nbsp;|&nbsp; Effective Date: June 19, 2026 &nbsp;|&nbsp; Last Updated: June 19, 2026</p>
 
   <div class="highlight">
-    <p><strong style="color:#fff;">Summary:</strong> Feetzer collects your location, account information, and usage data solely to provide local discovery features. We do not sell your personal data to third parties.</p>
+    <p><strong style="color:#fff;">Summary:</strong> Feetzer collects your location, account information, and in-app activity data solely to provide local discovery features. We do not sell your personal data to any third parties. All data is encrypted in transit and protected by server-side access controls.</p>
   </div>
 
   <h2>1. Who We Are</h2>
-  <p>Feetzer is a mobile application developed and operated by MTekaina. If you have any questions about this Privacy Policy, please contact us at <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>.</p>
+  <p>Feetzer is a mobile application developed and operated by MTekaina. Contact us at <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a> for any privacy questions.</p>
 
   <h2>2. What Data We Collect</h2>
-  <p>We collect the following categories of personal data:</p>
-  <ul>
-    <li><strong style="color:#fff;">Precise Location:</strong> Your GPS coordinates, collected while the app is in use, to find nearby attractions and calculate walking distances.</li>
-    <li><strong style="color:#fff;">Account Information:</strong> Your email address, display name, and profile photo (if provided) when you register or sign in.</li>
-    <li><strong style="color:#fff;">Usage Data:</strong> Places you view, visit, favourite, or interact with inside the app, to personalise your discovery feed.</li>
-    <li><strong style="color:#fff;">Device Information:</strong> Device type, OS version, and app version for crash reporting and compatibility improvements.</li>
-    <li><strong style="color:#fff;">Payment Information:</strong> If you subscribe to a premium plan, payment is processed securely by Stripe. We never store your card details.</li>
-    <li><strong style="color:#fff;">Push Notification Tokens:</strong> Used to send you relevant alerts about nearby events and your exploration activity.</li>
-  </ul>
+  <table>
+    <tr><th>Category</th><th>Data Collected</th><th>Purpose</th></tr>
+    <tr><td><strong style="color:#e94560">Precise Location</strong></td><td>GPS coordinates (foreground only)</td><td>Finding nearby attractions, walking distances, community attendance features</td></tr>
+    <tr><td><strong style="color:#e94560">Account Info</strong></td><td>Email, display name, profile photo (optional)</td><td>Authentication, profile display, connecting with other explorers</td></tr>
+    <tr><td><strong style="color:#e94560">Exploration Activity</strong></td><td>Places viewed, visited, favourited, intent-to-visit, ratings, reviews</td><td>Personalising your discovery feed and AI recommendations</td></tr>
+    <tr><td><strong style="color:#e94560">Gamification Data</strong></td><td>XP, level, badges, streaks, coins, tasks, quests completed</td><td>Powering the in-app progression and leaderboard systems</td></tr>
+    <tr><td><strong style="color:#e94560">Social Activity</strong></td><td>Friendship connections, chat messages, help requests, ratings given/received</td><td>Community features — connecting explorers and live help</td></tr>
+    <tr><td><strong style="color:#e94560">Payment Info</strong></td><td>Subscription status (no card data stored by us)</td><td>Managing premium subscription access; payments processed by Stripe</td></tr>
+    <tr><td><strong style="color:#e94560">Device &amp; App Info</strong></td><td>OS version, device model, FCM token, app version</td><td>Push notifications, crash reporting, compatibility improvements</td></tr>
+  </table>
 
   <h2>3. How We Use Your Data</h2>
   <ul>
-    <li>To show you nearby attractions, hidden gems, and personalised tour plans.</li>
-    <li>To calculate walking distances and travel times.</li>
-    <li>To power your gamification profile — XP, badges, and streaks.</li>
-    <li>To improve AI-powered recommendations over time.</li>
+    <li>To discover and rank nearby attractions, hidden gems, museums, parks, and local experiences in real time.</li>
+    <li>To generate personalised AI tour plans based on what's open, the weather, and your preferences.</li>
+    <li>To calculate walking distances and travel times from your current position.</li>
+    <li>To power the community attendance features — showing who else is going to a place today.</li>
+    <li>To run the gamification system — XP, levels, badges, streaks, daily tasks, and quests.</li>
+    <li>To enable social features — friend connections, live chat, and help requests.</li>
     <li>To process subscription payments via Stripe.</li>
-    <li>To send push notifications about time-sensitive local events.</li>
-    <li>To diagnose bugs and improve app stability.</li>
+    <li>To send push notifications about closing-soon attractions, friend activity, and streak reminders.</li>
+    <li>To diagnose bugs and improve app stability via crash reporting.</li>
   </ul>
 
   <h2>4. Third-Party Services</h2>
-  <p>Feetzer integrates the following third-party services, each with their own privacy practices:</p>
   <ul>
-    <li><strong style="color:#fff;">Supabase</strong> – User authentication and database storage. <a href="https://supabase.com/privacy" target="_blank">Supabase Privacy Policy</a></li>
-    <li><strong style="color:#fff;">Firebase (Google)</strong> – Crash analytics and Firestore data. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
-    <li><strong style="color:#fff;">Google Places API</strong> – Attraction data and place details. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-    <li><strong style="color:#fff;">Stripe</strong> – Payment processing. <a href="https://stripe.com/privacy" target="_blank">Stripe Privacy Policy</a></li>
-    <li><strong style="color:#fff;">OneSignal</strong> – Push notifications. <a href="https://onesignal.com/privacy_policy" target="_blank">OneSignal Privacy Policy</a></li>
-    <li><strong style="color:#fff;">Open-Meteo</strong> – Weather data (no personal data shared). <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a></li>
-    <li><strong style="color:#fff;">Mistral AI / OpenAI</strong> – AI-generated tour narratives (no personal data shared). Content is generated from attraction metadata only.</li>
+    <li><strong style="color:#fff;">Supabase</strong> – Primary database and authentication. Row Level Security (RLS) ensures each user can only access their own data. <a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a></li>
+    <li><strong style="color:#fff;">Firebase / Firestore (Google)</strong> – Real-time chat, live activity streams, and crash analytics. <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
+    <li><strong style="color:#fff;">Google Places API</strong> – Attraction metadata, photos, and place details. Location coordinates are sent to Google to fetch nearby results. <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></li>
+    <li><strong style="color:#fff;">Foursquare / HERE</strong> – Supplementary place discovery data. No personal data is shared beyond anonymous location coordinates.</li>
+    <li><strong style="color:#fff;">Stripe</strong> – Subscription payment processing. We never store card numbers. <a href="https://stripe.com/privacy" target="_blank">Privacy Policy</a></li>
+    <li><strong style="color:#fff;">OneSignal</strong> – Push notification delivery using your FCM device token. <a href="https://onesignal.com/privacy_policy" target="_blank">Privacy Policy</a></li>
+    <li><strong style="color:#fff;">Open-Meteo</strong> – Live weather data. Only anonymous location coordinates are sent; no personal data shared. <a href="https://open-meteo.com/" target="_blank">Website</a></li>
+    <li><strong style="color:#fff;">Wikimedia / Wikipedia</strong> – Encyclopaedia content for attraction descriptions. Fully public data; no personal data shared.</li>
+    <li><strong style="color:#fff;">Mistral AI / OpenAI / Groq</strong> – AI-generated tour narratives and vibe descriptions. Only attraction metadata (place name, category, location) is sent. No personal user data is shared with AI providers.</li>
+    <li><strong style="color:#fff;">Google Maps Static API</strong> – Static map image generation for attraction pages. Location coordinates sent anonymously.</li>
   </ul>
 
-  <h2>5. Location Data</h2>
-  <p>Feetzer requests precise location permission (<code>ACCESS_FINE_LOCATION</code>) to power its core discovery features. Location is accessed only while the app is in use (foreground). We do not track your location in the background or when the app is closed. Location coordinates are used exclusively to fetch nearby attractions and are not stored permanently on our servers.</p>
+  <h2>5. Location Data — Detailed</h2>
+  <p>Feetzer requests <strong style="color:#fff;">precise foreground location</strong> (<code>ACCESS_FINE_LOCATION</code> on Android). Location is accessed only while the app is open and visible on screen. We do not track your location in the background, when the app is minimised, or when it is closed.</p>
+  <p>Your coordinates are used to: (a) fetch nearby attractions within a 2.5 km radius, (b) calculate walking distances, and (c) display your approximate position on the in-app map. Raw GPS coordinates are never permanently stored on our servers — only the city/district-level area is recorded for matching purposes.</p>
+  <p>Location may optionally be shared with other Feetzer users as part of the community "Going Today" attendance feature. This sharing requires your explicit action (marking intent to visit a place). You can withdraw your intent at any time inside the app.</p>
 
-  <h2>6. Data Retention</h2>
-  <p>We retain your account data for as long as your account is active. Usage and interaction data (visited places, favourites) is retained to improve your personalised feed. You can request deletion of your data at any time by visiting our <a href="delete_account.html">account deletion page</a> or emailing <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>.</p>
+  <h2>6. Social Features & Chat</h2>
+  <p>Feetzer includes real-time chat between connected users, a live help request board visible to nearby explorers, and community attendance features. Messages are stored in Firebase Firestore and are only visible to the participants of the conversation. Help requests are visible to other users in your vicinity until you close or expire the request.</p>
 
-  <h2>7. Your Rights (GDPR)</h2>
-  <p>If you are located in the European Economic Area, you have the following rights:</p>
+  <h2>7. Data Retention</h2>
   <ul>
-    <li><strong style="color:#fff;">Right of Access:</strong> Request a copy of the personal data we hold about you.</li>
-    <li><strong style="color:#fff;">Right to Rectification:</strong> Request correction of inaccurate data.</li>
-    <li><strong style="color:#fff;">Right to Erasure:</strong> Request deletion of your personal data.</li>
-    <li><strong style="color:#fff;">Right to Restriction:</strong> Request that we limit how we process your data.</li>
-    <li><strong style="color:#fff;">Right to Data Portability:</strong> Request a portable copy of your data.</li>
-    <li><strong style="color:#fff;">Right to Object:</strong> Object to our processing of your personal data.</li>
+    <li><strong style="color:#fff;">Account data</strong> — retained while your account is active.</li>
+    <li><strong style="color:#fff;">Exploration history & gamification</strong> — retained to power personalised recommendations.</li>
+    <li><strong style="color:#fff;">Chat messages</strong> — retained in Firestore until either party deletes them.</li>
+    <li><strong style="color:#fff;">Location data</strong> — not permanently stored. Session-level coordinates are used and discarded.</li>
+    <li><strong style="color:#fff;">Deletion</strong> — you can permanently delete your account and all associated data via the <a href="delete_account.html">account deletion page</a> or by emailing <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>. Deletion is processed within 30 days.</li>
   </ul>
-  <p>To exercise any of these rights, contact us at <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>.</p>
 
-  <h2>8. Children's Privacy</h2>
-  <p>Feetzer is not directed to children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+  <h2>8. Your Rights (GDPR / EEA)</h2>
+  <p>If you are in the European Economic Area, you have the right to: access your data, correct inaccuracies, request erasure, restrict processing, receive a portable copy, and object to processing. Contact <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a> to exercise any right. We will respond within 30 days.</p>
 
-  <h2>9. Data Security</h2>
-  <p>We implement industry-standard security measures including encrypted connections (HTTPS/TLS), Supabase Row Level Security (RLS) policies, and secure authentication tokens. However, no method of transmission over the internet is 100% secure.</p>
+  <h2>9. Children's Privacy</h2>
+  <p>Feetzer is rated for users aged 13 and above. We do not knowingly collect personal data from children under 13. If you believe we have inadvertently collected such information, please contact us immediately and we will delete it promptly.</p>
 
-  <h2>10. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+  <h2>10. Data Security</h2>
+  <p>All data in transit uses HTTPS/TLS encryption. Database access is protected by Supabase Row Level Security (RLS) policies ensuring users can only read and write their own records. Authentication uses secure JWT tokens managed by Supabase Auth. Payment data is handled entirely by Stripe's PCI-compliant infrastructure.</p>
 
-  <h2>11. Contact Us</h2>
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy as the app evolves. Material changes will be communicated via in-app notification. The effective date at the top of this page always reflects the current version.</p>
+
+  <h2>12. Contact</h2>
   <p>MTekaina<br>
   Email: <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a><br>
   Website: <a href="https://tekaina.github.io/feetzer-web">tekaina.github.io/feetzer-web</a>
   </p>
 </div>
-<footer>&copy; 2026 MTekaina. All rights reserved.</footer>
+<footer>&copy; 2026 MTekaina. All rights reserved. &nbsp;|&nbsp; <a href="index.html" style="color:#666;">Home</a> &nbsp;|&nbsp; <a href="terms.html" style="color:#666;">Terms</a></footer>
 </body>
 </html>
