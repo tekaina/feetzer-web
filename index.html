@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Feetzer - Discover the best local attractions, hidden gems, and experiences around you. Available on Android." />
+  <title>Feetzer – Discover What's Around You</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #0a0a0f; color: #fff; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 30px; font-size: 14px; transition: color 0.2s; }
+    nav a:hover { color: #fff; }
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 100px 40px 80px; text-align: center; }
+    .hero h1 { font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 span { background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 20px; color: #aaa; max-width: 580px; margin: 0 auto 40px; line-height: 1.7; }
+    .badge { display: inline-block; background: linear-gradient(90deg, #e94560, #f5a623); color: #fff; padding: 14px 36px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 30px rgba(233,69,96,0.4); transition: transform 0.2s, box-shadow 0.2s; }
+    .badge:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(233,69,96,0.6); }
+    .features { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+    .features h2 { text-align: center; font-size: 36px; margin-bottom: 60px; color: #fff; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: #1a1a2e; border: 1px solid #2a2a4e; border-radius: 20px; padding: 36px; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: #e94560; }
+    .card .icon { font-size: 40px; margin-bottom: 16px; }
+    .card h3 { font-size: 20px; margin-bottom: 12px; color: #fff; }
+    .card p { font-size: 15px; color: #888; line-height: 1.7; }
+    .permissions { background: #111122; padding: 80px 40px; }
+    .permissions h2 { text-align: center; font-size: 36px; margin-bottom: 20px; }
+    .permissions p.sub { text-align: center; color: #888; margin-bottom: 50px; font-size: 16px; }
+    .perm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+    .perm-item { background: #1a1a2e; border-radius: 14px; padding: 24px; border-left: 4px solid #e94560; }
+    .perm-item h4 { font-size: 15px; color: #fff; margin-bottom: 8px; }
+    .perm-item p { font-size: 13px; color: #888; line-height: 1.6; }
+    .links-section { padding: 60px 40px; text-align: center; background: #0a0a0f; }
+    .links-section a { color: #e94560; text-decoration: none; margin: 0 20px; font-size: 15px; }
+    .links-section a:hover { text-decoration: underline; }
+    footer { background: #050508; padding: 40px; text-align: center; color: #444; font-size: 13px; }
+    footer a { color: #666; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: #aaa; }
+    @media(max-width:600px) { .hero h1 { font-size: 36px; } header { padding: 16px 20px; } .hero { padding: 60px 20px 50px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Feetzer</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:feetzer.io@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Discover <span>What's Around You</span></h1>
+  <p>Feetzer uses AI to surface the best local attractions, hidden gems, tours, and experiences near you — based on your mood, the weather, and the time of day.</p>
+  <a class="badge" href="#">Coming Soon on Google Play</a>
+</section>
+
+<section class="features" id="features">
+  <h2>Why Feetzer?</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🗺️</div>
+      <h3>AI-Powered Discovery</h3>
+      <p>Our AI scores and ranks nearby attractions based on proximity, quality, hidden gem status, weather, and your personal history.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💎</div>
+      <h3>Hidden Gems</h3>
+      <p>Skip the tourist traps. Feetzer highlights lesser-known spots loved by locals that most apps never show you.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>Gamification &amp; XP</h3>
+      <p>Earn experience points, unlock badges, and build streaks as you explore your city and discover new places.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📅</div>
+      <h3>Smart Tour Plans</h3>
+      <p>Feetzer generates personalized AI tour itineraries based on what's open now, the weather, and your preferences.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📍</div>
+      <h3>Live Local Feed</h3>
+      <p>See what's happening today, what places are closing soon, and what other explorers have visited near you.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Privacy First</h3>
+      <p>Your location data is used only to power your local discovery. We never sell your data to third parties.</p>
+    </div>
+  </div>
+</section>
+
+<section class="permissions">
+  <h2>Permissions We Use</h2>
+  <p class="sub">We only request permissions that are essential to the app experience.</p>
+  <div class="perm-grid">
+    <div class="perm-item">
+      <h4>📍 Location (Precise &amp; Approximate)</h4>
+      <p>Used to find attractions near you and calculate walking distances. Required for core discovery features.</p>
+    </div>
+    <div class="perm-item">
+      <h4>📷 Camera &amp; Photos</h4>
+      <p>Used only if you choose to upload a profile photo. Never accessed in the background.</p>
+    </div>
+    <div class="perm-item">
+      <h4>🌐 Internet Access</h4>
+      <p>Required to load attraction data, maps, weather, and user account information.</p>
+    </div>
+    <div class="perm-item">
+      <h4>🔔 Notifications</h4>
+      <p>Used to notify you about closing-soon attractions, friend activity, and your exploration streaks.</p>
+    </div>
+  </div>
+</section>
+
+<section class="links-section">
+  <p style="color:#888; margin-bottom:20px; font-size:15px;">Questions or support?</p>
+  <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="delete_account.html">Delete Account</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 MTekaina. All rights reserved. &nbsp;|&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="terms.html">Terms of Service</a> &nbsp;|&nbsp;
+    <a href="mailto:feetzer.io@gmail.com">Contact</a>
+  </p>
+</footer>
+
+</body>
+</html>
