@@ -3,72 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Feetzer - Discover hidden gems & local attractions near you with AI-powered personalised discovery, gamification, and live community activity." />
-  <title>Feetzer – Discover What's Around You</title>
+  <meta name="description" content="Feetzer – The hyperlocal community network that connects you to the right person nearby. Ask questions, request deliveries, and get real help from people within walking distance." />
+  <title>Feetzer – The Right Person, Right Near You</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #0a0a0f; color: #fff; }
-    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #fff; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
     .logo { font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav a { color: #ccc; text-decoration: none; margin-left: 30px; font-size: 14px; transition: color 0.2s; }
+    nav a { color: #ccc; text-decoration: none; margin-left: 28px; font-size: 14px; transition: color 0.2s; }
     nav a:hover { color: #fff; }
-    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 100px 40px 80px; text-align: center; }
-    .hero h1 { font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    /* ── HERO ── */
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 110px 40px 90px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(233,69,96,0.12) 0%, transparent 60%); pointer-events: none; }
+    .hero-eyebrow { display: inline-block; background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.4); color: #e94560; padding: 6px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+    .hero h1 { font-size: 60px; font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
     .hero h1 span { background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 20px; color: #aaa; max-width: 620px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero p { font-size: 20px; color: #aaa; max-width: 640px; margin: 0 auto 44px; line-height: 1.7; }
     .hero-badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
     .badge { display: inline-block; background: linear-gradient(90deg, #e94560, #f5a623); color: #fff; padding: 14px 36px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 30px rgba(233,69,96,0.4); transition: transform 0.2s, box-shadow 0.2s; }
     .badge:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(233,69,96,0.6); }
     .badge-outline { display: inline-block; border: 2px solid #e94560; color: #e94560; padding: 12px 32px; border-radius: 50px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
     .badge-outline:hover { background: #e94560; color: #fff; }
     .tagline { font-size: 13px; color: #555; margin-top: 10px; }
-    .features { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
-    .features h2 { text-align: center; font-size: 36px; margin-bottom: 12px; color: #fff; }
-    .features .sub { text-align: center; color: #666; margin-bottom: 60px; font-size: 16px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .card { background: #1a1a2e; border: 1px solid #2a2a4e; border-radius: 20px; padding: 36px; transition: transform 0.2s, border-color 0.2s; }
-    .card:hover { transform: translateY(-4px); border-color: #e94560; }
-    .card .icon { font-size: 40px; margin-bottom: 16px; }
-    .card h3 { font-size: 20px; margin-bottom: 12px; color: #fff; }
-    .card p { font-size: 15px; color: #888; line-height: 1.7; }
-    .how-it-works { background: #0d0d1a; padding: 80px 40px; }
-    .how-it-works h2 { text-align: center; font-size: 36px; margin-bottom: 12px; }
-    .how-it-works .sub { text-align: center; color: #666; margin-bottom: 60px; font-size: 16px; }
-    .steps { display: flex; flex-wrap: wrap; gap: 30px; max-width: 1000px; margin: 0 auto; justify-content: center; }
-    .step { background: #1a1a2e; border-radius: 20px; padding: 36px 28px; flex: 1; min-width: 220px; max-width: 280px; text-align: center; border-top: 3px solid #e94560; }
-    .step .num { font-size: 40px; font-weight: 900; background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
-    .step h3 { font-size: 18px; margin-bottom: 10px; color: #fff; }
+    /* ── STAT BAR ── */
+    .stats { background: #111122; padding: 40px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; border-top: 1px solid #1e1e3a; border-bottom: 1px solid #1e1e3a; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 36px; font-weight: 900; background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 4px; }
+    /* ── CORE CONCEPT ── */
+    .core { padding: 90px 40px; max-width: 1100px; margin: 0 auto; }
+    .core h2 { text-align: center; font-size: 38px; font-weight: 900; margin-bottom: 14px; }
+    .core .sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 60px; }
+    .core-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .core-card { background: #111122; border: 1px solid #2a2a4e; border-radius: 22px; padding: 36px; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+    .core-card:hover { transform: translateY(-4px); border-color: #e94560; }
+    .core-card.highlight { border-color: rgba(233,69,96,0.5); background: linear-gradient(135deg, #1a1a2e, #16213e); }
+    .core-card .icon { font-size: 44px; margin-bottom: 18px; }
+    .core-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .core-card p { font-size: 15px; color: #888; line-height: 1.75; }
+    .core-card .pill { display: inline-block; margin-top: 16px; background: rgba(233,69,96,0.12); border: 1px solid rgba(233,69,96,0.3); color: #e94560; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    /* ── HOW IT WORKS ── */
+    .how { background: #0d0d1a; padding: 90px 40px; }
+    .how h2 { text-align: center; font-size: 38px; font-weight: 900; margin-bottom: 14px; }
+    .how .sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 60px; }
+    .steps { display: flex; flex-wrap: wrap; gap: 24px; max-width: 1100px; margin: 0 auto; justify-content: center; }
+    .step { background: #1a1a2e; border-radius: 22px; padding: 36px 28px; flex: 1; min-width: 200px; max-width: 240px; text-align: center; border-top: 4px solid; }
+    .step:nth-child(1) { border-color: #e94560; }
+    .step:nth-child(2) { border-color: #f5a623; }
+    .step:nth-child(3) { border-color: #10b981; }
+    .step:nth-child(4) { border-color: #6b46c1; }
+    .step:nth-child(5) { border-color: #3b82f6; }
+    .step .num { font-size: 42px; font-weight: 900; margin-bottom: 12px; }
+    .step:nth-child(1) .num { color: #e94560; }
+    .step:nth-child(2) .num { color: #f5a623; }
+    .step:nth-child(3) .num { color: #10b981; }
+    .step:nth-child(4) .num { color: #6b46c1; }
+    .step:nth-child(5) .num { color: #3b82f6; }
+    .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: #fff; }
     .step p { font-size: 14px; color: #888; line-height: 1.6; }
-    .gamification { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
-    .gamification h2 { text-align: center; font-size: 36px; margin-bottom: 12px; }
-    .gamification .sub { text-align: center; color: #666; margin-bottom: 60px; font-size: 16px; }
-    .gam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .gam-card { background: #111122; border: 1px solid #2a2a4e; border-radius: 16px; padding: 28px; text-align: center; }
-    .gam-card .icon { font-size: 36px; margin-bottom: 12px; }
-    .gam-card h4 { font-size: 17px; margin-bottom: 8px; color: #fff; }
-    .gam-card p { font-size: 13px; color: #777; line-height: 1.6; }
-    .permissions { background: #111122; padding: 80px 40px; }
-    .permissions h2 { text-align: center; font-size: 36px; margin-bottom: 20px; }
-    .permissions p.sub { text-align: center; color: #888; margin-bottom: 50px; font-size: 16px; }
-    .perm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-    .perm-item { background: #1a1a2e; border-radius: 14px; padding: 24px; border-left: 4px solid #e94560; }
-    .perm-item h4 { font-size: 15px; color: #fff; margin-bottom: 8px; }
+    /* ── REQUEST TYPES ── */
+    .types { padding: 90px 40px; max-width: 1100px; margin: 0 auto; }
+    .types h2 { text-align: center; font-size: 38px; font-weight: 900; margin-bottom: 14px; }
+    .types .sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 60px; }
+    .types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .type-card { border-radius: 20px; padding: 34px; border: 2px solid; transition: transform 0.2s; }
+    .type-card:hover { transform: translateY(-4px); }
+    .type-card.q { border-color: rgba(107,70,193,0.5); background: linear-gradient(135deg, rgba(107,70,193,0.12), rgba(107,70,193,0.04)); }
+    .type-card.d { border-color: rgba(37,99,235,0.5); background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(37,99,235,0.04)); }
+    .type-card.s { border-color: rgba(16,185,129,0.5); background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(16,185,129,0.04)); }
+    .type-card .icon { font-size: 40px; margin-bottom: 16px; }
+    .type-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; color: #fff; }
+    .type-card p { font-size: 14px; color: #888; line-height: 1.7; margin-bottom: 16px; }
+    .type-card .example { font-size: 13px; font-style: italic; padding: 10px 14px; border-radius: 10px; }
+    .type-card.q .example { background: rgba(107,70,193,0.12); color: #a78bfa; }
+    .type-card.d .example { background: rgba(37,99,235,0.12); color: #60a5fa; }
+    .type-card.s .example { background: rgba(16,185,129,0.12); color: #34d399; }
+    /* ── MATCHING ── */
+    .matching { background: #0d0d1a; padding: 90px 40px; }
+    .matching h2 { text-align: center; font-size: 38px; font-weight: 900; margin-bottom: 14px; }
+    .matching .sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 60px; }
+    .match-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+    .match-item { background: #1a1a2e; border-radius: 16px; padding: 26px; border-left: 4px solid #e94560; }
+    .match-item h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .match-item p { font-size: 13px; color: #888; line-height: 1.6; }
+    /* ── EARN & HELP ── */
+    .earn { padding: 90px 40px; max-width: 1000px; margin: 0 auto; text-align: center; }
+    .earn h2 { font-size: 38px; font-weight: 900; margin-bottom: 14px; }
+    .earn .sub { color: #666; font-size: 16px; margin-bottom: 60px; }
+    .earn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .earn-card { background: #111122; border: 1px solid #2a2a4e; border-radius: 16px; padding: 26px; text-align: center; }
+    .earn-card .icon { font-size: 36px; margin-bottom: 12px; }
+    .earn-card h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .earn-card p { font-size: 13px; color: #777; line-height: 1.6; }
+    /* ── PRIVACY STRIP ── */
+    .privacy-strip { background: #111122; padding: 80px 40px; }
+    .privacy-strip h2 { text-align: center; font-size: 36px; font-weight: 900; margin-bottom: 14px; }
+    .privacy-strip .sub { text-align: center; color: #888; margin-bottom: 50px; font-size: 16px; }
+    .perm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; max-width: 1000px; margin: 0 auto; }
+    .perm-item { background: #1a1a2e; border-radius: 14px; padding: 22px; border-left: 4px solid #e94560; }
+    .perm-item h4 { font-size: 15px; color: #fff; font-weight: 700; margin-bottom: 8px; }
     .perm-item p { font-size: 13px; color: #888; line-height: 1.6; }
-    .social { background: #0a0a0f; padding: 80px 40px; }
-    .social h2 { text-align: center; font-size: 36px; margin-bottom: 12px; }
-    .social .sub { text-align: center; color: #666; margin-bottom: 60px; font-size: 16px; }
-    .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
-    .social-card { background: #1a1a2e; border-radius: 16px; padding: 28px; border: 1px solid #2a2a4e; }
-    .social-card .icon { font-size: 32px; margin-bottom: 12px; }
-    .social-card h4 { font-size: 16px; margin-bottom: 8px; color: #fff; }
-    .social-card p { font-size: 13px; color: #777; line-height: 1.6; }
+    /* ── LINKS & FOOTER ── */
     .links-section { padding: 60px 40px; text-align: center; background: #0a0a0f; border-top: 1px solid #1a1a2e; }
-    .links-section a { color: #e94560; text-decoration: none; margin: 0 20px; font-size: 15px; }
+    .links-section p { color: #666; margin-bottom: 20px; font-size: 15px; }
+    .links-section a { color: #e94560; text-decoration: none; margin: 0 18px; font-size: 15px; }
     .links-section a:hover { text-decoration: underline; }
     footer { background: #050508; padding: 40px; text-align: center; color: #444; font-size: 13px; }
     footer a { color: #666; text-decoration: none; margin: 0 10px; }
     footer a:hover { color: #aaa; }
-    @media(max-width:600px) { .hero h1 { font-size: 36px; } header { padding: 16px 20px; } .hero { padding: 60px 20px 50px; } nav { display: none; } }
+    @media(max-width:700px) {
+      .hero h1 { font-size: 38px; }
+      header { padding: 16px 20px; }
+      .hero { padding: 70px 20px 55px; }
+      nav { display: none; }
+      .stats { gap: 32px; padding: 30px 20px; }
+      .core, .types, .earn { padding: 60px 20px; }
+      .how, .matching, .privacy-strip { padding: 60px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -76,9 +127,10 @@
 <header>
   <div class="logo">Feetzer</div>
   <nav>
-    <a href="#features">Features</a>
     <a href="#how">How It Works</a>
-    <a href="#social">Community</a>
+    <a href="#requests">Request Types</a>
+    <a href="#matching">Matching</a>
+    <a href="#earn">Earn</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="mailto:feetzer.io@gmail.com">Contact</a>
@@ -86,188 +138,223 @@
 </header>
 
 <section class="hero">
-  <h1>Discover <span>Hidden Gems</span><br>Around You</h1>
-  <p>Feetzer uses AI to surface the best local attractions, hidden gems, parks, museums, and experiences within walking distance — personalised by your mood, the weather, and the time of day.</p>
+  <div class="hero-eyebrow">Hyperlocal Community Network</div>
+  <h1>The <span>Right Person</span>,<br>Right Near You</h1>
+  <p>Need an answer, a delivery, or a local service? Feetzer connects you instantly to the most qualified person nearby — matched by location, expertise, and reputation.</p>
   <div class="hero-badges">
     <a class="badge" href="#">📲 Coming Soon on Google Play</a>
-    <a class="badge-outline" href="#features">See Features</a>
+    <a class="badge-outline" href="#how">See How It Works</a>
   </div>
-  <p class="tagline">Free to download · Available on Android</p>
+  <p class="tagline">Free to download · Available on Android · Vienna & beyond</p>
 </section>
 
-<section class="features" id="features">
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">📍</div>
+    <div class="stat-label">Location-first matching</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">⚡</div>
+    <div class="stat-label">Instant notifications to nearby helpers</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">🤝</div>
+    <div class="stat-label">Community-powered answers</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">🎯</div>
+    <div class="stat-label">Matched by expertise & proximity</div>
+  </div>
+</div>
+
+<section class="core" id="features">
   <h2>Why Feetzer?</h2>
-  <p class="sub">Skip the tourist traps. Explore like a local.</p>
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>AI-Powered Discovery</h3>
-      <p>Our AI scores nearby attractions using proximity, quality, hidden gem status, current weather, open/closed status, and your personal exploration history — all in real time.</p>
+  <p class="sub">Not a chatbot. Not a Google search. Real people, right around the corner.</p>
+  <div class="core-grid">
+    <div class="core-card highlight">
+      <div class="icon">📍</div>
+      <h3>Location-Based Matching</h3>
+      <p>Feetzer's core algorithm finds the best person to answer your question or fulfill your request based on their real-time proximity to your pinned location. Only people genuinely near you are matched.</p>
+      <span class="pill">Core Feature</span>
     </div>
-    <div class="card">
-      <div class="icon">💎</div>
-      <h3>Hidden Gems</h3>
-      <p>Feetzer highlights lesser-known spots loved by locals that most travel apps never show you. Curated automatically, updated daily.</p>
+    <div class="core-card">
+      <div class="icon">🧠</div>
+      <h3>Smart Expertise Matching</h3>
+      <p>Beyond distance, Feetzer ranks helpers by their expertise, past request categories, and community reputation — so the right person, not just the closest, gets notified.</p>
     </div>
-    <div class="card">
-      <div class="icon">🗂️</div>
-      <h3>Smart Tour Plans</h3>
-      <p>AI generates personalised multi-stop tour itineraries based on what's open right now, current weather, distance, and your interests. Two curated plans per session.</p>
+    <div class="core-card">
+      <div class="icon">⚡</div>
+      <h3>Instant Notifications</h3>
+      <p>The moment you post a request, the top-matched nearby users receive a push notification. Accept, reply, or pass — the fastest and most qualified helper wins.</p>
     </div>
-    <div class="card">
-      <div class="icon">📡</div>
-      <h3>Live Community Feed</h3>
-      <p>See which other explorers are heading to a place today, who has visited recently, and real-time attendance counts — all shown directly on the attraction page.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🌦️</div>
-      <h3>Weather-Aware Suggestions</h3>
-      <p>Feetzer adjusts its recommendations based on live weather — surfacing indoor venues on rainy days and open-air parks on sunny afternoons.</p>
-    </div>
-    <div class="card">
+    <div class="core-card">
       <div class="icon">🗺️</div>
-      <h3>Interactive Map</h3>
-      <p>Browse all nearby attractions on a live map with category filters — parks, museums, food, nightlife, historical landmarks, and more. Walk-time badges shown on every pin.</p>
+      <h3>Adjustable Search Radius</h3>
+      <p>Pin your exact location on the map and slide the radius — from 300m to 5km. See live how many people are available in that zone before you even submit your request.</p>
     </div>
-    <div class="card">
-      <div class="icon">📅</div>
-      <h3>Personalised Feed Sections</h3>
-      <p>Your feed auto-organises into sections: <em>Good Right Now</em>, <em>Hidden Gems</em>, <em>Rainy-Day Ideas</em>, <em>Local Favourites</em>, <em>Happening Today</em>, and <em>Surprise Me</em>.</p>
+    <div class="core-card">
+      <div class="icon">🤖</div>
+      <h3>AI Instant Answers</h3>
+      <p>For every request, Feetzer first provides an AI-generated answer from multiple sources (Mistral, OpenAI, Perplexity) — while simultaneously alerting the best nearby human helper.</p>
     </div>
-    <div class="card">
+    <div class="core-card">
       <div class="icon">🔒</div>
       <h3>Privacy First</h3>
-      <p>Location is only accessed while the app is open. We never sell your data. All connections use encrypted HTTPS/TLS. Row-level security protects every database record.</p>
+      <p>Location is only accessed while the app is open. Your precise coordinates are never stored permanently or shared with other users. All data is encrypted in transit and at rest.</p>
     </div>
   </div>
 </section>
 
-<section class="how-it-works" id="how">
+<section class="how" id="how">
   <h2>How It Works</h2>
-  <p class="sub">From open to exploring in under 30 seconds.</p>
+  <p class="sub">Post a request. Get matched. Get helped. In minutes.</p>
   <div class="steps">
     <div class="step">
       <div class="num">1</div>
-      <h3>Open the App</h3>
-      <p>Feetzer detects your location and immediately starts discovering nearby attractions within a 2.5 km radius.</p>
+      <h3>Choose Request Type</h3>
+      <p>Pick whether you need a question answered, a delivery made, or a local service — each type routes to the right kind of helper.</p>
     </div>
     <div class="step">
       <div class="num">2</div>
-      <h3>AI Scores & Ranks</h3>
-      <p>Each place is scored by quality, proximity, open status, weather fit, your history, and hidden gem potential.</p>
+      <h3>Describe & Categorise</h3>
+      <p>Write your request and choose a category. The more specific you are, the better Feetzer can match you to someone with real local knowledge.</p>
     </div>
     <div class="step">
       <div class="num">3</div>
-      <h3>Browse & Plan</h3>
-      <p>Swipe the personalised feed or explore the map. Tap a place for photos, Wikipedia info, AI vibe description, and community attendance.</p>
+      <h3>Pin Your Location</h3>
+      <p>Tap your exact spot on the map and set your search radius. See a live count of available helpers in your zone before you post.</p>
     </div>
     <div class="step">
       <div class="num">4</div>
-      <h3>Go & Earn XP</h3>
-      <p>Mark your intent to visit, check in, and earn XP. Build your explorer streak and unlock badges as you discover more.</p>
+      <h3>Get Matched</h3>
+      <p>Feetzer's algorithm ranks nearby users by distance, expertise, and trust score — then sends instant notifications to the top matches.</p>
+    </div>
+    <div class="step">
+      <div class="num">5</div>
+      <h3>Receive Help</h3>
+      <p>Your helper accepts, responds, or delivers. Rate the experience, earn coins, and build your community reputation.</p>
     </div>
   </div>
 </section>
 
-<section class="gamification">
-  <h2>🏆 Explore & Level Up</h2>
-  <p class="sub">Every discovery earns you points, badges, and bragging rights.</p>
-  <div class="gam-grid">
-    <div class="gam-card">
+<section class="types" id="requests">
+  <h2>Three Types of Requests</h2>
+  <p class="sub">Whatever you need, someone nearby can help.</p>
+  <div class="types-grid">
+    <div class="type-card q">
+      <div class="icon">❓</div>
+      <h3>Ask a Question</h3>
+      <p>Need a local answer fast? Post a question and get a reply from someone who's physically close and knows the area — verified by their location history and local expertise.</p>
+      <div class="example">"Is the pharmacy on Taborstraße open right now?"</div>
+    </div>
+    <div class="type-card d">
+      <div class="icon">🛵</div>
+      <h3>Delivery Request</h3>
+      <p>Ask a neighbour to pick something up and bring it to you. Perfect for groceries, pharmacy pickups, or grabbing takeaway from a spot two blocks away.</p>
+      <div class="example">"Pick up bread from Bäckerei Auer on Mariahilfer Str."</div>
+    </div>
+    <div class="type-card s">
+      <div class="icon">🔧</div>
+      <h3>Local Service</h3>
+      <p>Find someone with the right skill in your immediate area — plumbing, cleaning, IT help, moving assistance, and more. Matched by proximity and verified skill tags.</p>
+      <div class="example">"Need a plumber urgently, within 500m of me"</div>
+    </div>
+  </div>
+</section>
+
+<section class="matching" id="matching">
+  <h2>The Matching Algorithm</h2>
+  <p class="sub">Distance is just the start. Feetzer finds the best match, not just the nearest.</p>
+  <div class="match-grid">
+    <div class="match-item">
+      <h4>📍 Proximity Score</h4>
+      <p>Users closer to your pinned location score higher. Only users within your selected radius are considered at all.</p>
+    </div>
+    <div class="match-item">
+      <h4>🎓 Expertise Match</h4>
+      <p>Helpers with experience in your request's category — tracked from past accepted requests — are ranked above generalists.</p>
+    </div>
+    <div class="match-item">
+      <h4>⭐ Trust Score</h4>
+      <p>Community ratings, completed requests, and response time history all factor into a helper's trust score, which boosts their match priority.</p>
+    </div>
+    <div class="match-item">
+      <h4>⚡ Availability Signal</h4>
+      <p>Users who are currently active in the app or have been recently active in your area are treated as more likely to respond quickly.</p>
+    </div>
+    <div class="match-item">
+      <h4>🗣️ Language Preference</h4>
+      <p>Helpers who share your language preference are ranked higher so communication is smooth and efficient from the start.</p>
+    </div>
+    <div class="match-item">
+      <h4>🔔 Instant Notification</h4>
+      <p>The top 3–5 matched helpers receive an instant push notification and can accept or pass on your request in real time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="earn" id="earn">
+  <h2>🏆 Help Neighbors, Earn Rewards</h2>
+  <p class="sub">Every completed request builds your reputation and earns you real rewards.</p>
+  <div class="earn-grid">
+    <div class="earn-card">
       <div class="icon">⭐</div>
       <h4>XP & Levels</h4>
-      <p>Earn experience points for every visit, review, and task completed. Level up from Rookie to Expert Explorer.</p>
+      <p>Earn XP for every answered question, completed delivery, and service fulfilled. Level up from Newcomer to Community Expert.</p>
     </div>
-    <div class="gam-card">
-      <div class="icon">🔥</div>
-      <h4>Daily & Login Streaks</h4>
-      <p>Maintain daily login and exploration streaks to earn bonus XP multipliers. Your longest streak is permanently recorded.</p>
-    </div>
-    <div class="gam-card">
-      <div class="icon">🏅</div>
-      <h4>Badges & Achievements</h4>
-      <p>Unlock unique badges for exploring different categories, visiting hidden gems, completing quests, and reaching milestones.</p>
-    </div>
-    <div class="gam-card">
-      <div class="icon">📋</div>
-      <h4>Daily Tasks & Quests</h4>
-      <p>Complete daily challenges and multi-step quests to earn bonus coins, XP, and unlock special achievements.</p>
-    </div>
-    <div class="gam-card">
+    <div class="earn-card">
       <div class="icon">💰</div>
-      <h4>Coins Economy</h4>
-      <p>Earn coins through tasks and activities. Use them to boost visibility, access premium features, or exchange for rewards.</p>
+      <h4>Coins</h4>
+      <p>Earn Feetzer coins for helping out. Use them for premium features or redeem for rewards in the app.</p>
     </div>
-    <div class="gam-card">
+    <div class="earn-card">
+      <div class="icon">🏅</div>
+      <h4>Badges</h4>
+      <p>Unlock unique badges for milestones — first delivery, 10 questions answered, top helper of the week, and more.</p>
+    </div>
+    <div class="earn-card">
+      <div class="icon">🔥</div>
+      <h4>Streaks</h4>
+      <p>Keep helping every day to build your activity streak and earn bonus XP multipliers.</p>
+    </div>
+    <div class="earn-card">
       <div class="icon">📊</div>
       <h4>Leaderboards</h4>
-      <p>See how you rank against other explorers locally and globally. Weekly, monthly, and all-time rankings tracked separately.</p>
+      <p>See how you rank among helpers in your neighbourhood, city, and globally — weekly and all-time.</p>
+    </div>
+    <div class="earn-card">
+      <div class="icon">✅</div>
+      <h4>Reputation Score</h4>
+      <p>Requesters rate your help after each interaction. A high reputation score means you get matched first for future requests.</p>
     </div>
   </div>
 </section>
 
-<section class="social" id="social">
-  <h2>👥 Community Features</h2>
-  <p class="sub">Explore together, discover more.</p>
-  <div class="social-grid">
-    <div class="social-card">
-      <div class="icon">📍</div>
-      <h4>Going Today Carousel</h4>
-      <p>See who else plans to visit an attraction today. Community attendance shown in real time on every place page.</p>
-    </div>
-    <div class="social-card">
-      <div class="icon">🤝</div>
-      <h4>Connect with Explorers</h4>
-      <p>Send and receive friendship requests. View other explorers' profiles, XP, level, badges, and recent discoveries.</p>
-    </div>
-    <div class="social-card">
-      <div class="icon">💬</div>
-      <h4>Live Chat</h4>
-      <p>Message connected explorers in real time. Coordinate plans, share tips about local spots, and build your explorer network.</p>
-    </div>
-    <div class="social-card">
-      <div class="icon">🛎️</div>
-      <h4>Live Help Requests</h4>
-      <p>Post a live local help request visible to nearby users — from restaurant recommendations to local guides. Earn coins by helping others.</p>
-    </div>
-    <div class="social-card">
-      <div class="icon">⭐</div>
-      <h4>Ratings & Endorsements</h4>
-      <p>Rate your experience, endorse other explorers for communication and helpfulness, and build your reputation score.</p>
-    </div>
-    <div class="social-card">
-      <div class="icon">❤️</div>
-      <h4>Favourites & History</h4>
-      <p>Save favourite places, track your visited history, and mark places you plan to visit. Your personal exploration diary.</p>
-    </div>
-  </div>
-</section>
-
-<section class="permissions">
+<section class="privacy-strip">
   <h2>Permissions We Use</h2>
-  <p class="sub">We only request permissions that are essential to the app experience. All use is transparent and user-controlled.</p>
+  <p class="sub">We only request what the app genuinely needs. All use is transparent and user-controlled.</p>
   <div class="perm-grid">
     <div class="perm-item">
       <h4>📍 Location (Precise)</h4>
-      <p>Used to find attractions near you, calculate walking distances, and show live community activity at nearby places. Accessed only while the app is open.</p>
-    </div>
-    <div class="perm-item">
-      <h4>📷 Camera &amp; Photos</h4>
-      <p>Used only if you choose to upload or change your profile photo. Never accessed automatically or in the background.</p>
-    </div>
-    <div class="perm-item">
-      <h4>🌐 Internet Access</h4>
-      <p>Required to load attraction data, maps, weather conditions, AI tour plans, and your account information.</p>
+      <p>Required for location-based matching. Used to find nearby helpers, calculate distances, and set your request pin. Accessed only while the app is open.</p>
     </div>
     <div class="perm-item">
       <h4>🔔 Notifications</h4>
-      <p>Used to alert you about closing-soon attractions you've saved, friend activity, streak reminders, and live help request responses.</p>
+      <p>Used to alert matched helpers of new requests, and to notify requesters when someone has accepted their request.</p>
+    </div>
+    <div class="perm-item">
+      <h4>📷 Camera &amp; Photos</h4>
+      <p>Only if you choose to upload a profile photo. Never accessed automatically or in the background.</p>
+    </div>
+    <div class="perm-item">
+      <h4>🌐 Internet Access</h4>
+      <p>Required to load requests, match data, AI responses, maps, and account information in real time.</p>
     </div>
   </div>
 </section>
 
 <section class="links-section">
-  <p style="color:#888; margin-bottom:20px; font-size:15px;">Questions or support?</p>
+  <p>Questions or support?</p>
   <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a>
   <a href="privacy.html">Privacy Policy</a>
   <a href="terms.html">Terms of Service</a>

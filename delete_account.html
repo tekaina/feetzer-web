@@ -3,146 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delete Your Account – Feetzer</title>
+  <title>Delete Account – Feetzer</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #ccc; line-height: 1.8; }
-    header { background: #1a1a2e; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 24px; font-weight: 800; background: linear-gradient(90deg,#e94560,#f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-    nav a { color: #888; text-decoration: none; margin-left: 24px; font-size: 13px; }
-    nav a:hover { color: #fff; }
-    .container { max-width: 720px; margin: 60px auto; padding: 0 30px 80px; }
-    h1 { font-size: 36px; color: #fff; margin-bottom: 10px; }
-    .meta { color: #666; font-size: 14px; margin-bottom: 40px; }
-    h2 { font-size: 20px; color: #fff; margin: 36px 0 12px; border-left: 4px solid #e94560; padding-left: 14px; }
-    p { margin-bottom: 16px; color: #aaa; }
-    ul { margin: 10px 0 16px 24px; color: #aaa; }
-    ul li { margin-bottom: 8px; }
-    a { color: #e94560; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .warning { background: #1f0a0a; border: 1px solid #5c1a1a; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
-    .warning strong { color: #ff6b6b; }
-    .steps { background: #1a1a2e; border-radius: 16px; padding: 28px 32px; margin: 24px 0; border: 1px solid #2a2a4e; }
-    .step-item { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
-    .step-item:last-child { margin-bottom: 0; }
-    .step-num { background: linear-gradient(90deg, #e94560, #f5a623); color: #fff; font-weight: 800; font-size: 15px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .step-content h4 { color: #fff; font-size: 15px; margin-bottom: 4px; }
-    .step-content p { font-size: 14px; color: #888; margin: 0; }
-    .email-btn { display: inline-block; background: linear-gradient(90deg, #e94560, #f5a623); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 15px; text-decoration: none; margin-top: 16px; box-shadow: 0 6px 24px rgba(233,69,96,0.3); transition: transform 0.2s; }
-    .email-btn:hover { transform: translateY(-2px); text-decoration: none; }
-    .data-list { background: #0f0f1f; border-radius: 12px; padding: 20px 24px; margin: 16px 0; }
-    .data-list ul { list-style: none; margin: 0; padding: 0; }
-    .data-list ul li { padding: 6px 0; border-bottom: 1px solid #1a1a2e; font-size: 14px; color: #aaa; }
-    .data-list ul li:last-child { border: none; }
-    .data-list ul li::before { content: '🗑️ '; }
-    .retained-list ul li::before { content: '⏳ '; }
-    footer { text-align: center; padding: 30px; color: #444; font-size: 13px; border-top: 1px solid #1a1a2e; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 24px; font-weight: 800; background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+    .container { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+    h1 { font-size: 40px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .meta { color: #555; font-size: 14px; margin-bottom: 40px; }
+    h2 { font-size: 20px; font-weight: 800; color: #fff; margin: 36px 0 12px; border-left: 4px solid #e94560; padding-left: 16px; }
+    p { font-size: 15px; color: #999; margin-bottom: 14px; }
+    ul { margin: 0 0 16px 20px; }
+    li { font-size: 15px; color: #999; margin-bottom: 8px; }
+    a { color: #e94560; }
+    .warning-box { background: rgba(233,69,96,0.08); border: 2px solid rgba(233,69,96,0.35); border-radius: 14px; padding: 22px 26px; margin: 30px 0; }
+    .warning-box h3 { color: #e94560; font-size: 17px; font-weight: 800; margin-bottom: 10px; }
+    .warning-box ul { margin-left: 18px; }
+    .warning-box li { color: #ccc; font-size: 14px; }
+    .method { background: #111122; border: 1px solid #2a2a4e; border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+    .method .badge { display: inline-block; background: #e94560; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 14px; }
+    .method h3 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .method ol { margin-left: 18px; }
+    .method li { font-size: 14px; color: #999; margin-bottom: 8px; }
+    .method .note { font-size: 13px; color: #666; margin-top: 14px; font-style: italic; }
+    .email-btn { display: inline-block; margin-top: 16px; background: linear-gradient(90deg, #e94560, #f5a623); color: #fff; padding: 12px 28px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; }
+    footer { background: #050508; padding: 30px; text-align: center; color: #444; font-size: 13px; margin-top: 60px; }
+    footer a { color: #666; text-decoration: none; margin: 0 10px; }
+    @media(max-width:600px) { .container { padding: 40px 20px 60px; } h1 { font-size: 28px; } header { padding: 16px 20px; } }
   </style>
 </head>
 <body>
 <header>
   <a class="logo" href="index.html">Feetzer</a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </nav>
+  <a href="index.html" style="color:#aaa; font-size:14px; text-decoration:none;">← Back to Home</a>
 </header>
 <div class="container">
-  <h1>🗑️ Delete Your Account</h1>
-  <p class="meta">Feetzer by MTekaina &nbsp;|&nbsp; Updated: June 19, 2026</p>
+  <h1>Delete Your Account</h1>
+  <p class="meta">Developer: MTekaina &nbsp;·&nbsp; <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a></p>
 
-  <p>You have the right to permanently delete your Feetzer account and all associated data at any time. This page explains how to do so both from within the app and by contacting us directly.</p>
+  <p>You have the right to delete your Feetzer account and all associated personal data at any time. This page explains exactly what happens when you delete your account and how to do it.</p>
 
-  <div class="warning">
-    <p><strong>⚠️ Warning: Account deletion is permanent.</strong> Once your account is deleted, your profile, exploration history, XP, badges, streaks, coins, friends list, chat history, saved places, and all other data will be permanently removed. This action cannot be undone.</p>
+  <div class="warning-box">
+    <h3>⚠️ Account deletion is permanent and cannot be undone.</h3>
+    <ul>
+      <li>All your personal information (name, email, profile photo)</li>
+      <li>Your location data and saved addresses</li>
+      <li>Your request history (questions, deliveries, services)</li>
+      <li>Your XP, coins, badges, streaks, and leaderboard entries</li>
+      <li>Your ratings, reviews, and reputation score</li>
+      <li>Your active subscriptions (no refund for unused period)</li>
+    </ul>
   </div>
 
-  <h2>Method 1 — Delete from Within the App</h2>
-  <div class="steps">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-content">
-        <h4>Open Feetzer and go to your Profile</h4>
-        <p>Tap the profile icon in the bottom navigation bar to open your profile screen.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-content">
-        <h4>Open Settings</h4>
-        <p>Tap the ⚙️ settings icon in the top-right corner of your profile screen.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h4>Scroll to Account Settings</h4>
-        <p>Find and tap the "Account" or "Privacy" section within Settings.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-content">
-        <h4>Tap "Delete Account"</h4>
-        <p>Confirm your identity and tap "Delete Account". You will be asked to confirm this irreversible action.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">5</div>
-      <div class="step-content">
-        <h4>Deletion complete</h4>
-        <p>Your account and all data will be permanently deleted within 30 days. You will be signed out immediately.</p>
-      </div>
-    </div>
+  <h2>Method 1 — Delete from the App</h2>
+  <div class="method">
+    <span class="badge">Recommended</span>
+    <h3>In-app account deletion</h3>
+    <ol>
+      <li>Open the Feetzer app</li>
+      <li>Tap your profile icon (top right)</li>
+      <li>Go to <strong>Settings</strong></li>
+      <li>Scroll to <strong>Account</strong> section</li>
+      <li>Tap <strong>Delete Account</strong></li>
+      <li>Confirm by entering your password</li>
+      <li>Your account and all data will be permanently deleted within <strong>30 days</strong></li>
+    </ol>
+    <p class="note">You will receive a confirmation email when deletion is complete.</p>
   </div>
 
   <h2>Method 2 — Request by Email</h2>
-  <p>If you are unable to access the app, you can request account deletion by emailing us. Include the email address associated with your Feetzer account in your message.</p>
-  <a class="email-btn" href="mailto:feetzer.io@gmail.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20Feetzer%20account.%0A%0ARegistered%20email%3A%20">📧 Email Us to Delete Account</a>
-  <p style="margin-top: 16px; font-size: 14px; color: #666;">We will process your deletion request within 30 days and send a confirmation email.</p>
-
-  <h2>What Data Will Be Deleted</h2>
-  <div class="data-list">
-    <ul>
-      <li>Your profile — name, email, profile photo, bio</li>
-      <li>Exploration history — all visited, favourited, and viewed places</li>
-      <li>Gamification data — XP, level, badges, coins, streaks, tasks, quests</li>
-      <li>Social data — friend connections, friendship requests, endorsements</li>
-      <li>Chat messages — all conversations in Firestore</li>
-      <li>Help requests — all posted and answered requests</li>
-      <li>Intent-to-visit records — all scheduled visit plans</li>
-      <li>Saved locations and home location preferences</li>
-      <li>Push notification tokens (FCM)</li>
-      <li>Ratings and reviews submitted</li>
-      <li>Account authentication data (Supabase)</li>
-    </ul>
+  <div class="method">
+    <span class="badge" style="background:#666;">Alternative</span>
+    <h3>Send a deletion request</h3>
+    <ol>
+      <li>Email us at <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a></li>
+      <li>Use subject line: <strong>"Account Deletion Request"</strong></li>
+      <li>Include the email address registered to your Feetzer account</li>
+      <li>We will process your request within <strong>7 business days</strong> and confirm by email</li>
+    </ol>
+    <a class="email-btn" href="mailto:feetzer.io@gmail.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20Feetzer%20account.%20My%20registered%20email%20is%3A%20">✉️ Send Deletion Request</a>
   </div>
 
-  <h2>Data Retained After Deletion</h2>
-  <div class="data-list retained-list">
-    <ul>
-      <li>Anonymised, aggregated usage statistics that cannot identify you</li>
-      <li>Transaction records required by law (if you purchased a subscription)</li>
-      <li>Backup data — securely purged within 30 days of deletion request</li>
-    </ul>
-  </div>
-
-  <h2>Cancel Your Subscription First</h2>
-  <p>If you have an active Feetzer premium subscription, please cancel it before deleting your account to avoid future charges. To cancel:</p>
+  <h2>What Data Is Deleted</h2>
   <ul>
-    <li>Open Google Play Store on your device</li>
-    <li>Go to Menu → Subscriptions</li>
-    <li>Find Feetzer and tap Cancel Subscription</li>
+    <li>✅ Account credentials and profile information</li>
+    <li>✅ Precise and approximate location data</li>
+    <li>✅ All requests posted (questions, deliveries, services)</li>
+    <li>✅ All replies and conversations</li>
+    <li>✅ XP, coins, badges, and gamification data</li>
+    <li>✅ Ratings and reputation scores</li>
+    <li>✅ Push notification tokens</li>
   </ul>
-  <p>Deleting your Feetzer account does not automatically cancel your Google Play subscription.</p>
 
-  <h2>Contact &amp; Support</h2>
-  <p>MTekaina<br>
-  Email: <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a><br>
-  We respond to all deletion requests within 5 business days.
-  </p>
+  <h2>What May Be Retained</h2>
+  <ul>
+    <li>🔒 Anonymised, aggregated statistical data (no personal identifiers) used to improve the service</li>
+    <li>🔒 Transaction records required by financial regulations (Stripe), retained per legal requirements</li>
+    <li>🔒 Logs required for fraud prevention, retained for a maximum of 90 days</li>
+  </ul>
+
+  <h2>Before You Delete</h2>
+  <p>If you're having an issue with the app, consider contacting us first — we may be able to resolve it quickly. Email <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a> and we'll get back to you within 24 hours.</p>
+
 </div>
-<footer>&copy; 2026 MTekaina. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html" style="color:#666;">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" style="color:#666;">Terms of Service</a></footer>
+<footer>
+  <p>&copy; 2026 MTekaina &nbsp;|&nbsp; <a href="index.html">Home</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a> &nbsp;|&nbsp; <a href="mailto:feetzer.io@gmail.com">Contact</a></p>
+</footer>
 </body>
 </html>
