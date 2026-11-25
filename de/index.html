@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feetzer — Dein lokaler Buddy | Frag in der Nähe, hilf in der Nähe</title>
+  <meta name="description" content="Stell eine lokale Frage, finde eine helfende Hand, entdecke einen Ort oder schmiede einen Plan. Feetzer verbindet alltägliche Anliegen mit Menschen in deiner Nähe.">
+
+  <!-- Canonical & Language Alternates (GitHub Pages origin pre-cutover; switch base to https://feetzer.co on DNS cutover) -->
+  <link rel="canonical" href="https://tekaina.github.io/feetzer-web/de/">
+  <link rel="alternate" hreflang="en" href="https://tekaina.github.io/feetzer-web/">
+  <link rel="alternate" hreflang="de" href="https://tekaina.github.io/feetzer-web/de/">
+  <link rel="alternate" hreflang="x-default" href="https://tekaina.github.io/feetzer-web/">
+
+  <!-- Icons (derived directly from official Feetzer Logo.png) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/feetzer-logo-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#06234d">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Feetzer">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Feetzer — Manches braucht jemanden in der Nähe.">
+  <meta property="og:description" content="Stell eine lokale Frage, finde eine helfende Hand, entdecke einen Ort oder mach gemeinsam Pläne mit Menschen in deiner Umgebung.">
+  <meta property="og:url" content="https://tekaina.github.io/feetzer-web/de/">
+  <meta property="og:image" content="https://tekaina.github.io/feetzer-web/assets/og-de.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Feetzer — Dein lokaler Buddy. Manches braucht jemanden in der Nähe.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Feetzer — Manches braucht jemanden in der Nähe.">
+  <meta name="twitter:description" content="Stell eine lokale Frage, finde eine helfende Hand, entdecke einen Ort oder mach gemeinsam Pläne mit Menschen in deiner Umgebung.">
+  <meta name="twitter:image" content="https://tekaina.github.io/feetzer-web/assets/og-de.png">
+
+  <link rel="stylesheet" href="../css/site.css">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('feetzer-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Supported Factual Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Feetzer",
+    "inLanguage": "de",
+    "operatingSystem": "Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "description": "Stell eine lokale Frage, finde eine helfende Hand, entdecke einen Ort oder mach Pläne mit Menschen in deiner Nähe.",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=io.feetzer.feetzer",
+    "installUrl": "https://play.google.com/store/apps/details?id=io.feetzer.feetzer",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "MTekaina",
+      "email": "feetzer.io@gmail.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Direkt zum Inhalt springen</a>
+
+  <!-- A. NAVIGATION -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Feetzer — Dein lokaler Buddy (Startseite)">
+        <img class="brand-mark" src="../assets/feetzer-logo-192.png" srcset="../assets/feetzer-logo-192.png 1x, ../assets/feetzer-logo-512.png 2x" width="44" height="44" alt="Feetzer Logo">
+        <span class="brand-text">
+          <span class="brand-name">Feetzer</span>
+          <span class="brand-tag">Dein lokaler Buddy</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Hauptnavigation">
+        <a href="#how-it-works">So funktioniert’s</a>
+        <a href="#moments">Was du machen kannst</a>
+        <a href="#in-the-app">In der App</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Sprache">
+          <a href="../" lang="en" hreflang="en" data-lang-choice="en" aria-label="Switch to English">EN</a>
+          <span aria-current="page">DE</span>
+        </div>
+
+        <button class="icon-btn header-theme-btn" type="button" data-theme-toggle aria-label="Zum dunklen Design wechseln">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+
+        <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1 9.2-9.2v-.2L3.7 2.3l-.1.1zm12.3 12.7-3.1-3.1v-.2l3.1-3.1.1.1 3.6 2.1c1 .6 1 1.5 0 2.1l-3.6 2.1-.1 0zm-3.1-3.2L3.7 21c.3.4.9.4 1.6 0l10.6-6-3.1-3.1zm0-2.2 3.1-3.1-10.6-6c-.7-.4-1.3-.4-1.6 0l9.1 9.1z"/></svg>
+          <span>App <span class="header-cta-label">holen</span></span>
+        </a>
+
+        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Navigationsmenü öffnen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-drawer" aria-label="Mobile Navigation" hidden>
+      <div class="wrap">
+        <div class="mobile-drawer-links">
+          <a href="#how-it-works">So funktioniert’s <span aria-hidden="true">→</span></a>
+          <a href="#moments">Was du machen kannst <span aria-hidden="true">→</span></a>
+          <a href="#in-the-app">In der App <span aria-hidden="true">→</span></a>
+          <a href="#trust">Vertrauen &amp; Kontrolle <span aria-hidden="true">→</span></a>
+          <a href="#faq">FAQ <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="mobile-drawer-meta">
+          <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">Bei Google Play laden</a>
+          <div style="display:flex;align-items:center;gap:0.65rem;">
+            <a href="../" lang="en" hreflang="en" data-lang-choice="en">English (EN)</a>
+            <button class="icon-btn" type="button" data-theme-toggle aria-label="Zum dunklen Design wechseln">
+              <span data-theme-icon aria-hidden="true">◐</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- B. HERO + INTERACTIVE "FEETZER MOMENTS" VIEWER -->
+    <section id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Feetzer — Dein lokaler Buddy</p>
+          <h1>Manches braucht <em>jemanden in der Nähe.</em></h1>
+          <p class="hero-lead">Stell eine lokale Frage, finde eine helfende Hand, entdecke einen Ort oder schmiede einen Plan. Feetzer verbindet alltägliche Anliegen mit Menschen in deiner Umgebung.</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1 9.2-9.2v-.2L3.7 2.3l-.1.1zm12.3 12.7-3.1-3.1v-.2l3.1-3.1.1.1 3.6 2.1c1 .6 1 1.5 0 2.1l-3.6 2.1-.1 0zm-3.1-3.2L3.7 21c.3.4.9.4 1.6 0l10.6-6-3.1-3.1zm0-2.2 3.1-3.1-10.6-6c-.7-.4-1.3-.4-1.6 0l9.1 9.1z"/></svg>
+              <span>Jetzt bei Google Play holen</span>
+            </a>
+            <a class="btn btn-secondary btn-lg" href="#how-it-works">So funktioniert’s</a>
+          </div>
+
+          <div class="availability-row" aria-label="Verfügbarkeit">
+            <span class="availability-pill"><span class="status-dot" aria-hidden="true"></span>Verfügbar für Android</span>
+            <span>iOS folgt bald</span>
+            <span class="availability-sep" aria-hidden="true">·</span>
+            <span>Kostenlos laden</span>
+          </div>
+
+          <!-- Compact 4-Step Feetzer Model Strip -->
+          <div class="model-strip" aria-label="So läuft ein Feetzer-Moment ab">
+            <p class="model-strip-title">Das Prinzip hinter jedem Beispiel</p>
+            <ol class="model-steps-mini">
+              <li><span class="model-step-idx">01</span><span><strong>Ein Anliegen entsteht</strong> — kurz und zeitlich begrenzt posten.</span></li>
+              <li><span class="model-step-idx">02</span><span><strong>In der Nähe sichtbar</strong> — rund um den Ort, ohne Personenverzeichnis.</span></li>
+              <li><span class="model-step-idx">03</span><span><strong>Freiwillige Antworten</strong> — wer etwas weiß oder helfen mag, meldet sich.</span></li>
+              <li><span class="model-step-idx">04</span><span><strong>Du entscheidest</strong> — Tipp nutzen, chatten oder Anfrage schließen.</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Interactive 16-Example "Feetzer Moments" Viewer -->
+        <section id="moments-viewer" class="moments-showcase" aria-roledescription="Karussell" aria-label="Interaktive Feetzer-Beispiele">
+          <div class="moments-ambient" aria-hidden="true"></div>
+          <div class="moments-backplate" aria-hidden="true"></div>
+
+          <div class="moments-device">
+            <div class="moments-notch" aria-hidden="true"></div>
+
+            <div class="moments-topbar">
+              <span class="exchange-badge">✦ Illustratives Beispiel</span>
+              <span class="moments-honest-cue">Freiwillige Antworten · Antwortzeiten variieren</span>
+            </div>
+
+            <div class="moments-cats" role="group" aria-label="Beispiele nach Kategorie filtern">
+              <button type="button" class="moment-cat-btn" data-cat-filter="all" aria-pressed="true"><span class="cat-dot cat-dot-all" aria-hidden="true"></span>Alle</button>
+              <button type="button" class="moment-cat-btn" data-cat-filter="ask" aria-pressed="false"><span class="cat-dot cat-dot-ask" aria-hidden="true"></span>Vor Ort fragen</button>
+              <button type="button" class="moment-cat-btn" data-cat-filter="help" aria-pressed="false"><span class="cat-dot cat-dot-help" aria-hidden="true"></span>Hilfe ums Eck</button>
+              <button type="button" class="moment-cat-btn" data-cat-filter="discover" aria-pressed="false"><span class="cat-dot cat-dot-discover" aria-hidden="true"></span>Entdecken</button>
+              <button type="button" class="moment-cat-btn" data-cat-filter="plan" aria-pressed="false"><span class="cat-dot cat-dot-plan" aria-hidden="true"></span>Planen</button>
+            </div>
+
+            <div id="moments-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+            <div class="moments-deck">
+              <!-- 1. MANDATORY A: PARKING (Vor Ort fragen) -->
+              <article class="moment-slide is-active" data-moment-id="parking" data-category="ask">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-ask">Vor Ort fragen · Parkplatz-Check</span>
+                    <span class="m-window">Aktiv: 20 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Nähe Schönbrunngasse · Vor der Abfahrt gepostet</div>
+                  <blockquote class="m-quote">„Ich fahre gleich los – ist in der Gegend um die Schönbrunngasse gerade alles zugeparkt oder sieht jemand freie Plätze?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Passantin</span><span class="m-reply-meta">Geht gerade vorbei</span></div>
+                    <p>„Auf der linken Straßenseite sehe ich gerade zwei freie Parklücken.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbar ums Eck</span><span class="m-reply-meta">Im Viertel</span></div>
+                    <p>„Vorne ist es meistens voll, aber in der Seitengasse ums Eck wird man fast immer leichter fündig.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Immer vor Fahrtantritt oder als Beifahrer fragen – nie am Steuer tippen. Öffentliche Parkplätze ändern sich schnell und lassen sich nicht freihalten.</p>
+              </article>
+
+              <!-- 2. MANDATORY B: COFFEE TABLE (Hilfe ums Eck) -->
+              <article class="moment-slide" data-moment-id="coffee-table" data-category="help">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-help">Hilfe ums Eck · Kurz anpacken</span>
+                    <span class="m-window">Aktiv: 60 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Wohnstraße · Offener Hauseingang</div>
+                  <blockquote class="m-quote">„Kann mir jemand aus der Nähe kurz helfen, einen Couchtisch in den 1. Stock zu tragen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbar in der Nähe</span><span class="m-reply-meta">~2 Gehmin.</span></div>
+                    <p>„Ich bin gleich ums Eck und kann für fünf Minuten mit anpacken.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Anwohnerin</span><span class="m-reply-meta">Gleicher Block</span></div>
+                    <p>„Ich hätte unten eine kleine Sackkarre stehen, falls euch das bis zum Stiegenhaus hilft.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Trefft euch am besten am offenen Hauseingang und entscheidet in Ruhe, womit ihr euch wohlfühlt.</p>
+              </article>
+
+              <!-- 3. MANDATORY C: BAG / PAPERS (Hilfe ums Eck) -->
+              <article class="moment-slide" data-moment-id="bag-papers" data-category="help">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-help">Hilfe ums Eck · Nachbarschaftsgefallen</span>
+                    <span class="m-window">Aktiv: 90 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Bezirksbibliothek → Hauseingang</div>
+                  <blockquote class="m-quote">„Hab mir vorhin den Knöchel vertreten – geht jemand von der Bibliothek Richtung Park und könnte meine Stofftasche mit Unterlagen bis zum Hauseingang mitnehmen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Bibliotheksbesucherin</span><span class="m-reply-meta">Lesesaal</span></div>
+                    <p>„Ich lerne noch bis 16:00 hier und gehe am Heimweg ohnehin am Park vorbei – bringe sie dir gern zum Eingang mit.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbar am Weg</span><span class="m-reply-meta">~6 Min. entfernt</span></div>
+                    <p>„Bin gegen 16:30 auch auf der Strecke unterwegs, falls du bis dahin noch jemanden brauchst.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Freiwilliger Gefallen unter Nachbarn, kein versicherter Botendienst. Gib nur Dinge mit, bei denen du ein gutes Gefühl hast – keine heiklen Dokumente oder Wertsachen.</p>
+              </article>
+
+              <!-- 4. CORNER CAFÉ (Vor Ort fragen) -->
+              <article class="moment-slide" data-moment-id="corner-cafe" data-category="ask">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-ask">Vor Ort fragen · Stimmung vor Ort</span>
+                    <span class="m-window">Aktiv: 45 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Eckcafé im Viertel · Nachmittag</div>
+                  <blockquote class="m-quote">„Ist es im Café an der Ecke gerade ruhig genug zum Arbeiten?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Stammgast</span><span class="m-reply-meta">Gerade vor Ort</span></div>
+                    <p>„Ich sitze gerade oben – angenehm ruhig und am Fenster sind noch Tische frei.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Passant</span><span class="m-reply-meta">Vor dem Lokal</span></div>
+                    <p>„Draußen im Gastgarten ist viel los, aber oben hat man super seine Ruhe.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Echte Eindrücke aus dem Moment, wenn bloße Öffnungszeiten nicht weiterhelfen.</p>
+              </article>
+
+              <!-- 5. QUIET EVENING WALK (Entdecken) -->
+              <article class="moment-slide" data-moment-id="evening-walk" data-category="discover">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-discover">Orte entdecken · Abendrunde</span>
+                    <span class="m-window">Aktiv: 90 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Park- &amp; Kanalviertel · Früher Abend</div>
+                  <blockquote class="m-quote">„Wo geht man hier als Einheimischer am besten für einen ruhigen Abendspaziergang abseits vom Verkehr hin?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Läufer aus dem Viertel</span><span class="m-reply-meta">In der Nähe</span></div>
+                    <p>„Nimm die Kastanienallee hinter dem Botanischen Garten – komplett autofrei und abends richtig entspannt.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbarin</span><span class="m-reply-meta">~5 Gehmin.</span></div>
+                    <p>„Die Fußgängerstege am ruhigen Seitenarm vom Kanal sind nach 19:00 Uhr wunderschön.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Persönliche Lieblingswege, die in keinem Reiseführer ganz oben stehen.</p>
+              </article>
+
+              <!-- 6. PARK AT 17:30 (Planen) -->
+              <article class="moment-slide" data-moment-id="park-join" data-category="plan">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-plan">Gemeinsam planen · Spontanes Treffen</span>
+                    <span class="m-window">Aktiv: 90 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Parkwiese im Viertel · Heute, 17:30</div>
+                  <blockquote class="m-quote">„Ich gehe um 17:30 mit Frisbee und Eistee in den Park. Hat jemand aus der Nähe Lust mitzukommen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbar aus der Nähe</span><span class="m-reply-meta">~4 Gehmin.</span></div>
+                    <p>„Mache gerade Feierabend ums Eck – bin gegen 17:40 super gern dabei!“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Parkbesucherin</span><span class="m-reply-meta">Im Viertel</span></div>
+                    <p>„Komme mit einer Freundin rüber – treffen wir uns bei den Bänken am Brunnen?“</p>
+                  </div>
+                </div>
+                <p class="m-note">Ungezwungene Treffen an öffentlichen Orten im Plan-Chat absprechen – ganz ohne Handynummern.</p>
+              </article>
+
+              <!-- 7. BAKERY PRETZELS (Vor Ort fragen) -->
+              <article class="moment-slide" data-moment-id="bakery-pretzels" data-category="ask">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-ask">Vor Ort fragen · Kurzer Check</span>
+                    <span class="m-window">Aktiv: 30 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Bäckerei an der Haltestelle · Spätnachmittag</div>
+                  <blockquote class="m-quote">„Hat die Bäckerei bei der Straßenbahn noch offen oder sind die Brezeln schon ausverkauft?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbarin beim Einkaufen</span><span class="m-reply-meta">Gerade draußen</span></div>
+                    <p>„Bis 18:00 offen und es kam gerade ein frisches Blech Brezeln raus – nur Bauernbrot ist schon weg.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Passant</span><span class="m-reply-meta">An der Station</span></div>
+                    <p>„Drinnen steht gerade auch niemand an.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Spart dir den umsonst gemachten Weg, wenn ohnehin gerade jemand vorbeikommt.</p>
+              </article>
+
+              <!-- 8. TICKET MACHINE (Hilfe ums Eck) -->
+              <article class="moment-slide" data-moment-id="ticket-machine" data-category="help">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-help">Hilfe ums Eck · Lokales Wissen</span>
+                    <span class="m-window">Aktiv: 20 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Bahnhofshalle · Nachmittag</div>
+                  <blockquote class="m-quote">„Stehe gerade ratlos vorm Ticketautomaten: Gilt das 24-Stunden-Stadtticket bis zum Flughafen oder brauche ich die Außenzone dazu?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Pendlerin</span><span class="m-reply-meta">Am Bahnsteig</span></div>
+                    <p>„Das Stadtticket endet an der Stadtgrenze – tipp am zweiten Bildschirm unbedingt ‚Anschlussfahrschein‘ dazu, sonst wird’s teuer!“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Einheimischer</span><span class="m-reply-meta">In der Nähe</span></div>
+                    <p>„Nimm damit dann die normale Schnellbahn statt dem Expresszug, die fährt vom Gleis nebenan.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Schnelle Alltagshilfe von Leuten, die die Strecke jeden Tag fahren.</p>
+              </article>
+
+              <!-- 9. FIRST-DATE CAFÉ (Entdecken) -->
+              <article class="moment-slide" data-moment-id="date-cafe" data-category="discover">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-discover">Orte entdecken · Atmosphäre</span>
+                    <span class="m-window">Aktiv: 2 Std.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Seitengassen im Altbauviertel · Abend</div>
+                  <blockquote class="m-quote">„Kennt jemand ein verstecktes Café ums Eck für ein erstes Date – gemütliches Licht und nicht zu laut zum Unterhalten?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Stammgast</span><span class="m-reply-meta">~6 Min. entfernt</span></div>
+                    <p>„Das kleine Teehaus im Innenhof hinter dem Steinbogen hat Holznischen, dezente Musik und bis 21:30 offen.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Anwohnerin</span><span class="m-reply-meta">Im Viertel</span></div>
+                    <p>„Stimme für den Innenhof – dort kann man entspannt reden, ohne gegen laute Boxen anzuschreien.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Tipps passend zum Anlass statt austauschbarer Sterne-Bewertungen.</p>
+              </article>
+
+              <!-- 10. BOARD-GAME AFTERNOON (Planen) -->
+              <article class="moment-slide" data-moment-id="board-games" data-category="plan">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-plan">Gemeinsam planen · Spielrunde</span>
+                    <span class="m-window">Aktiv: 3 Std.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Öffentliches Spielcafé · Sonntag, 15:00</div>
+                  <blockquote class="m-quote">„Wir suchen noch zwei Leute für einen entspannten Brettspiel-Nachmittag – sitzen schon am großen Tisch beim Fenster.“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Brettspiel-Fan</span><span class="m-reply-meta">~8 Gehmin.</span></div>
+                    <p>„Hab heute frei und komme gern vorbei! Soll ich Azul oder Carcassonne mitbringen?“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Neu im Viertel</span><span class="m-reply-meta">Ums Eck</span></div>
+                    <p>„Wenn auch Einsteiger willkommen sind, spiele ich super gern ein, zwei Runden mit!“</p>
+                  </div>
+                </div>
+                <p class="m-note">Öffentliche Treffpunkte machen gemeinsame Runden in der Nachbarschaft angenehm unkompliziert.</p>
+              </article>
+
+              <!-- 11. POST OFFICE LINE (Vor Ort fragen) -->
+              <article class="moment-slide" data-moment-id="post-office" data-category="ask">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-ask">Vor Ort fragen · Warteschlange</span>
+                    <span class="m-window">Aktiv: 25 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Postfiliale am Platz · Mittagspause</div>
+                  <blockquote class="m-quote">„Ist die Schlange bei der Post gerade lang oder geht sich das in 20 Minuten Mittagspause locker aus?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Anwohner</span><span class="m-reply-meta">War gerade drinnen</span></div>
+                    <p>„Geht heute richtig flott – zwei Schalter offen und nur drei Leute vor mir.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Passantin</span><span class="m-reply-meta">Im Vorraum</span></div>
+                    <p>„Falls dein Paket schon einen QR-Code hat: die Aufgabestation vorne ist komplett frei.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Kurze Auskunft aus erster Hand, wenn zufällig jemand vor Ort ist.</p>
+              </article>
+
+              <!-- 12. BORROWING A LADDER (Hilfe ums Eck) -->
+              <article class="moment-slide" data-moment-id="borrow-ladder" data-category="help">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-help">Hilfe ums Eck · 10 Min. ausborgen</span>
+                    <span class="m-window">Aktiv: 60 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Wohnblock am Hof · Früher Abend</div>
+                  <blockquote class="m-quote">„Glühbirne im Vorzimmer durchgebrannt und ein Stück zu hoch – könnte mir jemand ums Eck für zehn Minuten eine kleine Trittleiter borgen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbarin im Nebenhof</span><span class="m-reply-meta">Direkt nebenan</span></div>
+                    <p>„Hab eine klappbare Dreistufen-Leiter im Abstellraum – kann sie dir in fünf Minuten zum Hoftor bringen.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Anwohner</span><span class="m-reply-meta">Gleiche Gasse</span></div>
+                    <p>„Hätte ab 19:00 auch eine da, falls es sich vorher nicht ausgeht!“</p>
+                  </div>
+                </div>
+                <p class="m-note">Für zehn Minuten ausborgen statt neu kaufen – Übergabe einfach draußen am Tor vereinbaren.</p>
+              </article>
+
+              <!-- 13. MARKET STALL (Entdecken) -->
+              <article class="moment-slide" data-moment-id="market-stall" data-category="discover">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-discover">Orte entdecken · Markttipp</span>
+                    <span class="m-window">Aktiv: 45 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Samstagsmarkt · Kurz vor Schluss</div>
+                  <blockquote class="m-quote">„Schlendere gerade über den Samstagsmarkt – welcher Stand lohnt sich wirklich, bevor alle zusammenpacken?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Stammkundin</span><span class="m-reply-meta">Am Marktplatz</span></div>
+                    <p>„Unbedingt zum kleinen Almkäse-Stand beim Brunnen schauen – der gereifte Kräuterbergkäse ist großartig.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbar beim Einkaufen</span><span class="m-reply-meta">~2 Min. entfernt</span></div>
+                    <p>„Am Nordende gibt’s kurz vor Marktschluss noch ofenwarmes Spinat-Fladenbrot.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Ehrliche Empfehlungen von Menschen, die jede Woche dort einkaufen.</p>
+              </article>
+
+              <!-- 14. GALLERY EVENING (Planen) -->
+              <article class="moment-slide" data-moment-id="gallery-visit" data-category="plan">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-plan">Gemeinsam planen · Ausstellungsbesuch</span>
+                    <span class="m-window">Aktiv: 2 Std.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Galerieviertel · Heute, 18:30</div>
+                  <blockquote class="m-quote">„Heute Abend ist freier Eintritt in der Fotoausstellung – hat jemand Lust, sich die Galerie ab 18:30 gemeinsam anzuschauen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Fotografie-Fan</span><span class="m-reply-meta">~7 Min. entfernt</span></div>
+                    <p>„Wollte ich mir schon den ganzen Monat ansehen! Treffen wir uns um 18:25 draußen vorm Eingang?“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Nachbarin</span><span class="m-reply-meta">In der Gegend</span></div>
+                    <p>„Schließe mich gern an – danach vielleicht noch auf einen Espresso gegenüber am Platz?“</p>
+                  </div>
+                </div>
+                <p class="m-note">Gemeinsam macht Kultur vor der eigenen Haustür gleich doppelt Freude.</p>
+              </article>
+
+              <!-- 15. LIBRARY ENTRANCE (Vor Ort fragen) -->
+              <article class="moment-slide" data-moment-id="library-entrance" data-category="ask">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-ask">Vor Ort fragen · Zugang heute</span>
+                    <span class="m-window">Aktiv: 40 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Bibliotheksplatz · Vormittag</div>
+                  <blockquote class="m-quote">„Wegen des Baugerüsts im Innenhof diese Woche: Welcher Eingang zur Bibliothek ist heute offen?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Student im Lesesaal</span><span class="m-reply-meta">Drinnen</span></div>
+                    <p>„Die Hauptstiege ist gesperrt – geh über den Seiteneingang an der Parkallee, dort sind auch Rampe und Lift offen.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Passantin</span><span class="m-reply-meta">Vor dem Gebäude</span></div>
+                    <p>„Einfach links den gelben Schildern ums Eck folgen, dauert keine Minute.“</p>
+                  </div>
+                </div>
+                <p class="m-note">Kurzfristige Baustellen stehen selten online – wer schon dort ist, weiß es sofort.</p>
+              </article>
+
+              <!-- 16. SUNSET SPOT (Entdecken) -->
+              <article class="moment-slide" data-moment-id="sunset-spot" data-category="discover">
+                <div class="m-req">
+                  <div class="m-req-top">
+                    <span class="m-cat-pill m-cat-discover">Orte entdecken · Ausblick</span>
+                    <span class="m-window">Aktiv: 60 Min.</span>
+                  </div>
+                  <div class="m-context-chip">📍 Anhöhe am Viertelrand · Vor Sonnenuntergang</div>
+                  <blockquote class="m-quote">„Endlich klarer Himmel heute Abend – wo hat man hier in der Nähe einen schönen Platz für den Sonnenuntergang?“</blockquote>
+                </div>
+                <div class="m-seen">
+                  <span class="connector-pin" aria-hidden="true"><span class="connector-pin-core"></span></span>
+                  <span>In der Nähe sichtbar · Freiwillige Antworten (Beispiel)</span>
+                </div>
+                <div class="m-replies">
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Hobbyfotograf</span><span class="m-reply-meta">~5 Gehmin.</span></div>
+                    <p>„Oben bei den Steinbänken über den Weinberg-Stiegen hast du freien Westblick über die Dächer und meistens viel Platz.“</p>
+                  </div>
+                  <div class="m-reply">
+                    <div class="m-reply-head"><span class="m-reply-role">Anwohnerin</span><span class="m-reply-meta">In der Nähe</span></div>
+                    <p>„Sobald die Sonne weg ist, zieht es dort oben leicht – nimm dir am besten einen dünnen Pulli mit!“</p>
+                  </div>
+                </div>
+                <p class="m-note">Kleine Alltagsmomente – unkompliziert geteilt zwischen Menschen in derselben Umgebung.</p>
+              </article>
+            </div>
+
+            <!-- Viewer Controls -->
+            <div class="moments-controls" aria-label="Beispiel-Steuerung">
+              <div class="m-nav-group">
+                <button type="button" class="m-ctrl-btn" data-moment-prev aria-label="Vorheriges Beispiel">←</button>
+                <button type="button" class="m-ctrl-btn" data-moment-next aria-label="Nächstes Beispiel">→</button>
+              </div>
+
+              <div class="m-progress-wrap">
+                <span class="m-counter" data-moment-counter>1 / 16</span>
+                <div class="m-dots" data-moment-dots aria-label="Beispiel-Punkte"></div>
+              </div>
+
+              <button type="button" class="m-ctrl-btn" data-moment-autoplay aria-pressed="false" aria-label="Automatischen Beispielwechsel pausieren">⏸</button>
+            </div>
+          </div>
+
+          <!-- Excitement Callout + Secondary Store CTA -->
+          <div class="moments-next-callout">
+            <div class="moments-next-text">
+              <strong>Deine Anfrage könnte die nächste sein.</strong>
+              <span>Frag vor Ort nach, pack kurz mit an oder mach gemeinsam Pläne.</span>
+            </div>
+            <a class="moments-next-link" href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">Bei Google Play testen →</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- C. WHAT YOU CAN DO (4 PILLARS CONNECTED TO VIEWER) -->
+    <section id="moments" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Was du machen kannst</p>
+          <h2>Genau ein Feetzer-Moment.</h2>
+          <p>Suchmaschinen kennen Öffnungszeiten vom letzten Jahr. Menschen in deiner Nähe wissen, wie es vor Ort gerade wirklich aussieht, packen kurz mit an oder sind bei einer Runde am Abend dabei.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div>
+              <span class="example-tag">Aktuelles Wissen</span>
+              <h3>Vor Ort fragen</h3>
+              <p>Parkplatzlage vor dem Losfahren checken, Warteschlangen erfragen, freie Tische finden oder Baustellen-Zugänge klären.</p>
+            </div>
+            <button type="button" class="pillar-jump" data-jump-cat="ask">5 Fragen ansehen ↑</button>
+          </article>
+
+          <article class="pillar-card">
+            <div>
+              <span class="example-tag">Nachbarschaftshilfe</span>
+              <h3>Hilfe ums Eck</h3>
+              <p>Fünf Minuten beim Couchtisch mitanpacken, kurz eine Trittleiter ausborgen, Ticketautomaten verstehen oder kleine Gefallen anfragen.</p>
+            </div>
+            <button type="button" class="pillar-jump" data-jump-cat="help">4 Hilfsbeispiele ↑</button>
+          </article>
+
+          <article class="pillar-card">
+            <div>
+              <span class="example-tag">Orte mit Charakter</span>
+              <h3>Orte entdecken</h3>
+              <p>Ruhige Abendspaziergänge, gemütliche Cafés, lohnende Marktstände und Aussichtsplätze abseits üblicher Touristenlisten finden.</p>
+            </div>
+            <button type="button" class="pillar-jump" data-jump-cat="discover">4 Entdeckungen ↑</button>
+          </article>
+
+          <article class="pillar-card">
+            <div>
+              <span class="example-tag">Gemeinsame Pläne</span>
+              <h3>Gemeinsam planen</h3>
+              <p>Aus einer Parkrunde, einem Brettspiel-Nachmittag oder einem Galeriebesuch unkompliziert ein Treffen im Plan-Chat machen.</p>
+            </div>
+            <button type="button" class="pillar-jump" data-jump-cat="plan">3 Pläne ansehen ↑</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. HOW IT WORKS -->
+    <section id="how-it-works" class="section section-navy">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">So funktioniert’s</p>
+          <h2>Drei klare Schritte. Kein Verzeichnis fremder Profile.</h2>
+          <p>Auf Feetzer durchsuchst du keine öffentliche Karte von Personen. Jeder Kontakt beginnt mit einem konkreten, zeitlich begrenzten Anliegen.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Teile, was du brauchst</h3>
+            <p>Formuliere deine Frage oder Bitte, markiere den passenden Ort oder die Straßenecke und wähle, wie lange deine Anfrage aktiv bleibt (bis zu 3 Stunden).</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Menschen in der Nähe können antworten</h3>
+            <p>Feetzer-Nutzerinnen und -Nutzer im Umfeld sehen deine offene Anfrage und antworten freiwillig. Wenn öffentliche Infos passen, kann eine KI-Notiz als erste Orientierung ergänzen.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Chatten und selbst entscheiden</h3>
+            <p>Lies die Rückmeldungen, schreib bei Bedarf im Chat weiter oder schließe deine Anfrage einfach, sobald sich dein Anliegen erledigt hat.</p>
+          </article>
+        </div>
+
+        <div class="honesty-bar" role="note">
+          <span aria-hidden="true">✦</span>
+          <div>
+            <strong>Gut zu wissen:</strong> Antworten sind immer freiwillig und hängen davon ab, wer gerade in deiner Gegend aktiv ist. Feetzer vernetzt Menschen vor Ort – es vermittelt keine garantierten Sofort-Dienstleistungen.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E. PRODUCT IN CONTEXT -->
+    <section id="in-the-app" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Einblick in Feetzer</p>
+          <h2>Gebaut für echte Momente vor der Haustür.</h2>
+          <p>Drei zentrale Bereiche der aktuellen Android-App – aufgeräumt und klar, damit du ohne Umwege fragen, entdecken oder mitmachen kannst. <span class="example-tag" style="margin-left:0.35rem;">Bereinigte Beispielansichten</span></p>
+        </div>
+
+        <div class="context-grid">
+          <!-- View 1 -->
+          <article class="app-frame">
+            <div class="app-screen" aria-label="Beispielansicht einer lokalen Anfrage mit Antworten">
+              <div class="app-statusbar">
+                <span>Anfrage &amp; Antworten</span>
+                <span>Noch 28 Min.</span>
+              </div>
+              <div class="ui-card ui-card-muted">
+                <div class="ui-row">
+                  <span>Ort: Einkaufsstraße</span>
+                  <span>Frage</span>
+                </div>
+                <strong>„Gibt es hier in der Nähe noch ein Papiergeschäft mit Füllfeder-Tinte?“</strong>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row">
+                  <span>Antwort vor Ort · ~350 m</span>
+                  <span>vor 2 Min.</span>
+                </div>
+                <span>Der kleine Laden direkt bei der Busstation hat Fass-Tinte da – offen bis 18:00.</span>
+              </div>
+              <div class="ui-card ui-card-muted">
+                <div class="ui-row">
+                  <span>KI-Orientierung</span>
+                  <span>Optional</span>
+                </div>
+                <span>2 Schreibwarengeschäfte in 6 Gehminuten gelistet.</span>
+              </div>
+            </div>
+            <div class="app-caption">
+              <h3>Lokale Anfrage &amp; Antworten</h3>
+              <p>Stell ein konkretes Anliegen ein und erhalte Erfahrungen aus erster Hand – ergänzt um optionale KI-Ortsinfos, wenn öffentliche Daten vorliegen.</p>
+            </div>
+          </article>
+
+          <!-- View 2 -->
+          <article class="app-frame">
+            <div class="app-screen" aria-label="Beispielansicht von Entdecken für Orte in der Nähe">
+              <div class="app-statusbar">
+                <span>Entdecken</span>
+                <span>In deiner Nähe</span>
+              </div>
+              <div class="ui-chips">
+                <span class="ui-chip ui-chip-active">Ruhiger Kaffee</span>
+                <span class="ui-chip">Im Grünen</span>
+                <span class="ui-chip">Abends offen</span>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row">
+                  <span>Hof-Rösterei</span>
+                  <span>~4 Gehmin.</span>
+                </div>
+                <span>Schattiger Innenhof · Espresso &amp; Gebäck</span>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row">
+                  <span>Parkbänke am Seitenweg</span>
+                  <span>~7 Gehmin.</span>
+                </div>
+                <span>Ruhige Allee abseits der Hauptstraße</span>
+              </div>
+            </div>
+            <div class="app-caption">
+              <h3>Orte in der Umgebung</h3>
+              <p>Finde Cafés, Parks und Plätze rund um deinen Standort – gefiltert nach dem, worauf du gerade Lust hast.</p>
+            </div>
+          </article>
+
+          <!-- View 3 -->
+          <article class="app-frame">
+            <div class="app-screen" aria-label="Beispielansicht einer Aktivität mit Plan-Chat">
+              <div class="app-statusbar">
+                <span>Aktivität · Plan-Chat</span>
+                <span>4 dabei</span>
+              </div>
+              <div class="ui-card ui-card-muted">
+                <div class="ui-row">
+                  <span>Samstag · 10:30</span>
+                  <span>Uferweg</span>
+                </div>
+                <strong>Sketch- &amp; Kaffee-Spaziergang</strong>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row">
+                  <span>Erstellt von Host</span>
+                  <span>10:05</span>
+                </div>
+                <span>Wir treffen uns bei den Stiegen an der Brücke und holen zuerst Espresso.</span>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row">
+                  <span>Teilnehmerin</span>
+                  <span>10:12</span>
+                </div>
+                <span>Klingt super – ich nehme einen zweiten Skizzenblock mit, falls jemand Papier braucht!</span>
+              </div>
+            </div>
+            <div class="app-caption">
+              <h3>Aktivitäten &amp; Plan-Chat</h3>
+              <p>Schließ dich kleinen Gruppenplänen in der Umgebung an oder starte selbst eine Runde und kläre Details gesammelt im Chat.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- F. MORE THAN ANOTHER FEED -->
+    <section id="purpose" class="section section-alt">
+      <div class="wrap">
+        <div class="purpose-box">
+          <div class="section-head" style="margin-bottom:0;">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Kein weiterer Endlos-Feed</p>
+            <h2>Weniger Scrollen. Mehr echtes Leben vor Ort.</h2>
+            <p>Viele Apps wollen deine Aufmerksamkeit möglichst lange festhalten. Feetzer ist dafür gemacht, dir kurz im Alltag weiterzuhelfen – damit du dein Handy danach wieder wegstecken kannst.</p>
+          </div>
+
+          <div class="purpose-compare">
+            <div class="purpose-item">
+              <h3>Bewusst zeitlich begrenzt</h3>
+              <p>Beim Erstellen wählst du ein Zeitfenster (bis zu 3 Stunden). Läuft die Zeit ab oder schließt du die Anfrage, verschwindet sie aus dem aktiven Umgebungs-Feed statt ewig öffentlich herumzuliegen.</p>
+            </div>
+            <div class="purpose-item">
+              <h3>Anlass statt Selbstdarstellung</h3>
+              <p>Es gibt keine Follower-Zahlen, keine endlose Timeline und kein Durchklicken durch fremde Profile. Gespräche entstehen nur rund um eine konkrete Frage oder Aktivität.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. TRUST AND CONTROL -->
+    <section id="trust" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Vertrauen &amp; Kontrolle</p>
+          <h2>Klare Grenzen, die du selbst bestimmst.</h2>
+          <p>Lokaler Austausch funktioniert am besten, wenn jederzeit transparent ist, was geteilt wird und welche Schutzfunktionen dir direkt in der App zur Verfügung stehen.</p>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Optionales Verifizierungs-Abzeichen</h3>
+            <p>Mitglieder können freiwillig einen Ausweis zur Prüfung durch das Feetzer-Team einreichen, um ein Verifizierungs-Abzeichen im Profil zu erhalten. Das bestätigt die geprüfte Kontoidentität – ersetzt aber keine Sicherheitsüberprüfung, kein Führungszeugnis und keinen Qualifikationsnachweis.</p>
+          </article>
+
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <h3>Melden &amp; Blockieren in der App</h3>
+            <p>Du kannst andere Konten jederzeit sofort blockieren sowie Profile, Anfragen oder Nachrichten direkt aus der jeweiligen Ansicht melden. Meldungen werden von unserem Moderationsteam geprüft.</p>
+          </article>
+
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Standort nur bei aktiver Nutzung</h3>
+            <p>Dein GPS-Standort wird nur abgefragt, solange die App geöffnet ist – niemals im Hintergrund – und lässt sich jederzeit in den Geräteeinstellungen entziehen. Pinne bei Anfragen am besten öffentliche Orte oder Straßenecken statt deiner Privatadresse.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- H. FAQ -->
+    <section id="faq" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Häufige Fragen</p>
+          <h2>Kurz &amp; ehrlich beantwortet</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>
+              <span>Was ist Feetzer?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Feetzer ist eine mobile App, die alltägliche lokale Fragen, kleine Nachbarschaftshilfe, das Entdecken von Orten und ungezwungene Aktivitäten mit Menschen verbindet, die tatsächlich in deiner Nähe sind.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Wonach kann ich fragen?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Nach aktuellen Eindrücken vor Ort (etwa Wartezeiten, freie Plätze oder Tipps im Viertel), kleinen praktischen Gefallen im Alltag, Ortsempfehlungen oder Begleitung für gemeinsame Freizeitpläne. Für Notfälle, medizinische Anliegen, Sicherheitsvorfälle oder genehmigungspflichtige Dienstleistungen ist Feetzer nicht gedacht.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Wer sieht meine Anfrage?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Deine aktive Anfrage wird Feetzer-Nutzerinnen und -Nutzern im Umfeld des markierten Orts angezeigt, solange dein gewähltes Zeitfenster läuft. Anfragen sind nicht öffentlich im Web indexiert, und es gibt kein offenes Personenverzeichnis zum Durchblättern.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Kann ich selbst auch antworten oder helfen?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Ja, klar. Mit jedem Konto kannst du sowohl eigene Anfragen stellen als auch auf offene Fragen in deiner Umgebung antworten, lokale Tipps teilen oder Aktivitäten starten und begleiten.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Kann ich Feetzer auch außerhalb von Wien nutzen?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Ja. Feetzer ist international ausgerichtet, auch wenn die Idee in Wien gestartet ist. Da Antworten von echten Menschen in deiner Umgebung kommen, hängt die Resonanz davon ab, wie viele Leute Feetzer vor Ort bereits nutzen – ein paar Freundinnen, Freunde oder Nachbarn einzuladen ist der beste Start im eigenen Viertel.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Ist das Herunterladen und Nutzen kostenlos?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Ja – der Download über Google Play sowie alle aktuell freigeschalteten Funktionen (Anfragen posten, antworten, Orte entdecken und an Aktivitäten teilnehmen) sind derzeit kostenlos. Unsere Nutzungsbedingungen sehen zwar mögliche optionale Bezahlfunktionen für die Zukunft vor, kostenpflichtige Transaktionen oder Abos sind aktuell jedoch nicht aktiviert.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Was passiert, wenn niemand antwortet?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Antworten sind freiwillig und nicht garantiert. Wenn innerhalb deines Zeitfensters niemand reagiert, wird die Anfrage automatisch aus dem aktiven Feed genommen und in deinen persönlichen Verlauf abgelaufener Anfragen verschoben – von dort kannst du sie später bei Bedarf erneut aktivieren. Bei Ortsfragen kann Feetzer außerdem eine optionale KI-Orientierung anzeigen.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Wie melde ich ein Problem?</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Direkt in der App erreichst du über das Drei-Punkte-Menü bei Profilen, Anfragen und Chats jederzeit die Melde- und Blockierfunktion. Zusätzlich kannst du unser Team per E-Mail unter <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a> kontaktieren.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- I. FINAL CTA -->
+    <section id="download" class="final-cta">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow" style="color:#ffb5a8;">Feetzer holen</p>
+            <h2>Wenn eine Suchmaschine nicht reicht: frag in deiner Nähe.</h2>
+            <p>Hol dir Feetzer für Android, um lokale Fragen zu stellen, neue Ecken zu entdecken oder Menschen in deinem Viertel weiterzuhelfen.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1 9.2-9.2v-.2L3.7 2.3l-.1.1zm12.3 12.7-3.1-3.1v-.2l3.1-3.1.1.1 3.6 2.1c1 .6 1 1.5 0 2.1l-3.6 2.1-.1 0zm-3.1-3.2L3.7 21c.3.4.9.4 1.6 0l10.6-6-3.1-3.1zm0-2.2 3.1-3.1-10.6-6c-.7-.4-1.3-.4-1.6 0l9.1 9.1z"/></svg>
+                <span>Bei Google Play herunterladen</span>
+              </a>
+              <a class="btn btn-on-navy btn-lg" href="mailto:feetzer.io@gmail.com">Support kontaktieren</a>
+            </div>
+            <p class="cta-ios-note">Jetzt für Android bei Google Play verfügbar · iOS-Version folgt bald.</p>
+          </div>
+
+          <div class="qr-card">
+            <img src="../assets/qr-play-store.svg" width="148" height="148" loading="lazy" alt="QR-Code zum direkten Download von Feetzer bei Google Play">
+            <strong>Für Android scannen</strong>
+            <a href="https://play.google.com/store/apps/details?id=io.feetzer.feetzer" target="_blank" rel="noopener noreferrer">Google Play öffnen →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <img class="brand-mark" src="../assets/feetzer-logo-192.png" srcset="../assets/feetzer-logo-192.png 1x, ../assets/feetzer-logo-512.png 2x" width="40" height="40" loading="lazy" alt="Feetzer Logo">
+            <span class="brand-text">
+              <span class="brand-name">Feetzer</span>
+              <span class="brand-tag" style="display:block;">Dein lokaler Buddy.</span>
+            </span>
+          </a>
+          <p>Verbindet lokale Alltagsfragen, kleine Nachbarschaftshilfe, besondere Orte und gemeinsame Pläne mit Menschen in deiner Nähe.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Überblick</h3>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">So funktioniert’s</a></li>
+            <li><a href="#moments">Was du machen kannst</a></li>
+            <li><a href="#in-the-app">Einblick in Feetzer</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="../" lang="en" hreflang="en" data-lang-choice="en">English (EN)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Support &amp; Rechtliches</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a></li>
+            <li><a href="../privacy.html">Datenschutzerklärung (EN)</a></li>
+            <li><a href="../terms.html">Nutzungsbedingungen (EN)</a></li>
+            <li><a href="../child-safety.html">Kinderschutz-Richtlinie (EN)</a></li>
+            <li><a href="../delete_account.html">Konto löschen (EN)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Feetzer · Betrieben von MTekaina (Wien, Österreich)</div>
+        <div>Kontakt &amp; rechtliche Anfragen: <a href="mailto:feetzer.io@gmail.com">feetzer.io@gmail.com</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site.js" defer></script>
+</body>
+</html>

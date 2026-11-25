@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update base URL to https://feetzer.co upon custom-domain DNS cutover -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tekaina.github.io/feetzer-web/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tekaina.github.io/feetzer-web/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tekaina.github.io/feetzer-web/"/>
+  </url>
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tekaina.github.io/feetzer-web/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tekaina.github.io/feetzer-web/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tekaina.github.io/feetzer-web/"/>
+  </url>
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/terms.html</loc>
+  </url>
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/child-safety.html</loc>
+  </url>
+  <url>
+    <loc>https://tekaina.github.io/feetzer-web/delete_account.html</loc>
+  </url>
+</urlset>
