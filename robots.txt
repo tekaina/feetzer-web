@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Update domain to https://feetzer.co/sitemap.xml upon custom-domain DNS cutover
-Sitemap: https://tekaina.github.io/feetzer-web/sitemap.xml
+Sitemap: https://feetzer.co/sitemap.xml
